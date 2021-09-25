@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-declare global {
-  interface Window {
-    kakao: any;
-  }
-}
 export const Location = () => {
   const [active, setActive] = useState("subway");
   useEffect(() => {
-    let container = document.getElementById("map");
-    let options = {
-      center: new window.kakao.maps.LatLng(33.450701, 126.570667),
-      level: 3,
-    };
-
-    new window.kakao.maps.Map(container, options);
+    var map = new naver.maps.Map("map", {
+      center: new naver.maps.LatLng(37.3595704, 127.105399),
+      zoom: 10,
+    });
   }, []);
+
   return (
     <section className="location">
       <div className="location__title">

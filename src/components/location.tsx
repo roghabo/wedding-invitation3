@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export const Location = () => {
   const [active, setActive] = useState("subway");
   useEffect(() => {
-    var map = new naver.maps.Map("map", {
+    new naver.maps.Map("map", {
       center: new naver.maps.LatLng(37.3595704, 127.105399),
       zoom: 10,
     });

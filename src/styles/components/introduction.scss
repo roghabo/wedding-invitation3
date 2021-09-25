@@ -1,5 +1,5 @@
 .introduction {
-  padding: 0px 40px;
+  @extend %padding;
   margin-bottom: 136px;
   &__title {
     font-weight: 600;

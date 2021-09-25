@@ -1,0 +1,26 @@
+html,
+body {
+  font-family: Pretend;
+  font-style: normal;
+  font-size: 10px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  @media (min-width: 414px) {
+    width: 414px !important;
+  }
+}
+
+%title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+}

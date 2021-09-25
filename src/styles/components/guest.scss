@@ -1,0 +1,25 @@
+.guest {
+  padding: 0px 40px;
+  margin-bottom: 136px;
+  &__title {
+    margin-top: 136px;
+    margin-bottom: 12px;
+    @extend %title;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #828282;
+    margin-bottom: 47px;
+  }
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0px;
+    border-bottom: 1px solid #1a1a1a;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+  }
+}

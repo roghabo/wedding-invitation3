@@ -14,6 +14,7 @@
     margin-bottom: 47px;
   }
   &__box {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     padding: 12px 0px;
@@ -21,5 +22,37 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 18px;
+  }
+  &__modal {
+    &__title {
+      @extend %title;
+      margin-bottom: 12px;
+    }
+    &__coment {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: #828282;
+      margin-bottom: 48px;
+    }
+    &__contents {
+      margin-bottom: 40px;
+      &__title {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+        color: #484848;
+        margin-bottom: 12px;
+      }
+      &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 112%;
+      }
+    }
+    &__button {
+      @extend %modal_btn;
+      background-color: #f6f6f6;
+    }
   }
 }

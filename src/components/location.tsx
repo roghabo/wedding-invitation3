@@ -8,7 +8,6 @@ export const Location = () => {
       zoom: 10,
     });
   }, []);
-
   return (
     <section className="location">
       <div className="location__title">

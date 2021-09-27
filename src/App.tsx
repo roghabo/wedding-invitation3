@@ -9,7 +9,7 @@ import { Thanks } from "./components/thanks";
 function App() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(false);
+    window.onload = () => setLoading(false);
   }, []);
   return (
     <>

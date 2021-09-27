@@ -14,12 +14,12 @@ export const Footer = () => {
 
   return (
     <div className="Kakao">
-      <a id="kakao-link-btn" href="#">
+      <div id="kakao-link-btn">
         <img
           src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
           alt=""
         />
-      </a>
+      </div>
     </div>
   );
 };

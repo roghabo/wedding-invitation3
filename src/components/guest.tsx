@@ -65,7 +65,10 @@ export const Guest = () => {
             <div className="guest__modal__contents__title">
               <span>신랑측 계좌번호</span>
             </div>
-            <div className="guest__modal__contents__text">
+            <div
+              className="guest__modal__contents__text"
+              onClick={() => alert("안녕")}
+            >
               <span>국민 200123-45-678900 정영석</span>
             </div>
           </div>

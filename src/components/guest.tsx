@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import arrow from "../images/arrow.png";
 
 const customStyles = {
@@ -32,6 +33,10 @@ export const Guest = () => {
   function closeModal() {
     setIsOpen(false);
   }
+
+  const copyAccount = () => {
+    alert("계좌번호가 복사되었습니다.");
+  };
   return (
     <section className="guest">
       <div className="guest__title">
@@ -65,11 +70,13 @@ export const Guest = () => {
             <div className="guest__modal__contents__title">
               <span>신랑측 계좌번호</span>
             </div>
-            <div
-              className="guest__modal__contents__text"
-              onClick={() => alert("안녕")}
-            >
-              <span>국민 200123-45-678900 정영석</span>
+            <div className="guest__modal__contents__text">
+              <CopyToClipboard
+                onCopy={copyAccount}
+                text={"200123-45-678900 정영석"}
+              >
+                <span>국민 200123-45-678900 정영석</span>
+              </CopyToClipboard>
             </div>
           </div>
           <div className="guest__modal__contents">
@@ -77,7 +84,12 @@ export const Guest = () => {
               <span>신부측 계좌번호</span>
             </div>
             <div className="guest__modal__contents__text">
-              <span>국민 200123-45-678900 최수지</span>
+              <CopyToClipboard
+                onCopy={copyAccount}
+                text={"200123-45-678900 최수지"}
+              >
+                <span>국민 200123-45-678900 최수지</span>
+              </CopyToClipboard>
             </div>
           </div>
           <div className="guest__modal__button" onClick={closeModal}>

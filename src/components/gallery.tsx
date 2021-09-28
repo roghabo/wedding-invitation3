@@ -3,8 +3,8 @@ import Swiper, { Navigation } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/swiper-bundle";
 import Img1 from "../images/img1.png";
-import leftArrow from "../images/left_arrow.png";
-import rightArrow from "../images/arrow.png";
+import leftArrow from "../images/ic_l_b_3x.png";
+import rightArrow from "../images/ic_r_b_3x.png";
 
 Swiper.use([Navigation]);
 

@@ -46,12 +46,20 @@
   position: absolute;
   bottom: 0px;
   z-index: 10;
+  img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .swiper-button-prev {
-  right: 30px;
+  right: 40px;
 }
 
 .swiper-button-next {
   right: 0px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.1;
 }

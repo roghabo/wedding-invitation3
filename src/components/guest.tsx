@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import arrow from "../images/arrow.png";
+import arrow from "../images/ic_r_b_3x.png";
 
 const customStyles = {
   overlay: {

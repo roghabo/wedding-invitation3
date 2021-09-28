@@ -17,11 +17,16 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 12px 0px;
     border-bottom: 1px solid #1a1a1a;
     font-weight: 600;
     font-size: 18px;
     line-height: 18px;
+    img {
+      width: 24px;
+      height: 24px;
+    }
   }
   &__modal {
     &__title {

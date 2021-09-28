@@ -12,9 +12,9 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 export const Main = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    window.onload = () => setLoading(false);
     window.Kakao.init("269b68bfe2b4ab87ffa190e8e00365e7");
-  }, []);
+    setLoading(false);
+  }, [setLoading]);
   return (
     <>
       {loading ? (

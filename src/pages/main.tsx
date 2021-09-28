@@ -18,13 +18,7 @@ export const Main = () => {
   return (
     <>
       {loading ? (
-        <Loader
-          type="Hearts"
-          color="#1a1a1a"
-          height={100}
-          width={100}
-          timeout={10000} //3 secs
-        />
+        <Loader type="Hearts" color="#1a1a1a" height={100} width={100} />
       ) : (
         <div className="wrapper">
           <Cover />

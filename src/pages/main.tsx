@@ -6,6 +6,8 @@ import { Guest } from "../components/guest";
 import { Introduction } from "../components/introduction";
 import { Location } from "../components/location";
 import { Thanks } from "../components/thanks";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 export const Main = () => {
   const [loading, setLoading] = useState(true);
@@ -16,7 +18,13 @@ export const Main = () => {
   return (
     <>
       {loading ? (
-        <span>loading</span>
+        <Loader
+          type="Hearts"
+          color="#1a1a1a"
+          height={100}
+          width={100}
+          timeout={10000} //3 secs
+        />
       ) : (
         <div className="wrapper">
           <Cover />

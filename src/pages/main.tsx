@@ -5,9 +5,13 @@ import { Guest } from "../components/guest";
 import { Introduction } from "../components/introduction";
 import { Location } from "../components/location";
 import { Thanks } from "../components/thanks";
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { css } from "@emotion/react";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 export const Main = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -17,7 +21,12 @@ export const Main = () => {
   return (
     <>
       {loading ? (
-        <Loader type="Hearts" color="#1a1a1a" height={100} width={100} />
+        <PropagateLoader
+          color={"#1a1a1a"}
+          loading={true}
+          css={override}
+          size={8}
+        />
       ) : (
         <div className="wrapper">
           <Cover />

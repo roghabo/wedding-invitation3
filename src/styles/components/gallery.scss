@@ -2,11 +2,10 @@
   margin-bottom: 136px;
   background-color: #f6f6f6;
   aspect-ratio: 90 / 133;
-  padding: 0px 40px 57px 40px;
+  padding: 0px 40px 78px 40px;
 
   &__swiper {
     width: 100%;
-    padding-bottom: 21px;
     position: relative;
     &__wrapper {
       width: 100%;
@@ -34,9 +33,13 @@
 
 .swiper-slide {
   width: 100%;
+  background-color: #f6f6f6;
+  aspect-ratio: 14/19;
+  display: flex;
+  align-items: center;
   &__img {
     width: 100%;
-    aspect-ratio: 14/19;
+    object-fit: contain;
   }
 }
 
@@ -44,7 +47,7 @@
 .swiper-button-next {
   cursor: pointer;
   position: absolute;
-  bottom: 0px;
+  bottom: -40px;
   z-index: 10;
   img {
     width: 24px;

@@ -38,5 +38,11 @@
     border: 1px solid #ffffff;
     margin-top: 28px;
     cursor: pointer;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    &:active {
+      background: rgba(255, 255, 255, 0.2);
+    }
   }
 }

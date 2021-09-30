@@ -7,6 +7,7 @@ const customStyles = {
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     width: "100%",
+    zIndex: 100,
   },
   content: {
     top: "50%",

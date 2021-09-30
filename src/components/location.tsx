@@ -19,12 +19,12 @@ export const Location = () => {
       </div>
       <div className="location__location">
         <span>
-          아펠가모 광화문 B2 로스타뇨홀 <br />
-          서울 종로구 우정국로 26
+          바울교회 바울센터 <br />
+          7층 아트홀
         </span>
       </div>
       <div className="location__time">
-        <span>2021.11.03 오후 02:00</span>
+        <span>2019.10.12 오전 11:30</span>
       </div>
       <div className="location__tabs">
         <div
@@ -49,8 +49,9 @@ export const Location = () => {
       <div className="location__tabs__content">
         {active === "subway" && (
           <span>
-            [분당선] 서울숲역 5번 출구 도보 2분 <br />
-            [2호선] 뚝섬역 8번 출구 도보 5분
+            지하철 지하철 지하철 지하철 지하철 지하철
+            <br />
+            지하철 지하철 지하철 지하철 지하철
           </span>
         )}
         {active === "bus" && <span>100번 버스</span>}

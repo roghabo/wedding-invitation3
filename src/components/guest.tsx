@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import arrow from "../images/ic_r_b_3x.png";
@@ -23,16 +23,27 @@ const customStyles = {
 };
 
 export const Guest = () => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [moneyModalIsOpen, setMoneyModalIsOpen] = useState(false);
+  const [commentModalIsOpen, setCommentModalIsOpen] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
+  function openMoneyModal() {
+    setMoneyModalIsOpen(true);
   }
 
-  function afterOpenModal() {}
+  function afterOpenMoneyModal() {}
 
-  function closeModal() {
-    setIsOpen(false);
+  function closeMoneyModal() {
+    setMoneyModalIsOpen(false);
+  }
+
+  function openCommentModal() {
+    setCommentModalIsOpen(true);
+  }
+
+  function afterOpenCommentModal() {}
+
+  function closeCommentModal() {
+    setCommentModalIsOpen(false);
   }
 
   const copyAccount = () => {
@@ -46,21 +57,21 @@ export const Guest = () => {
       <div className="guest__text">
         <p>저희를 향한 축하의 마음을 전해주세요.</p>
       </div>
-      <div className="guest__box">
+      <div className="guest__box" onClick={openCommentModal}>
         <p>축하 메시지 남기기</p>
         <img src={arrow} alt="" />
       </div>
-      <div className="guest__box" onClick={openModal}>
+      <div className="guest__box" onClick={openMoneyModal}>
         <p>축의금 보내기</p>
         <img src={arrow} alt="" />
       </div>
       <div>
         <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
+          isOpen={moneyModalIsOpen}
+          onAfterOpen={afterOpenMoneyModal}
+          onRequestClose={closeMoneyModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Money Modal"
         >
           <div className="guest__modal__title">Gift</div>
           <div className="guest__modal__coment">
@@ -93,8 +104,27 @@ export const Guest = () => {
               </CopyToClipboard>
             </div>
           </div>
-          <div className="guest__modal__button" onClick={closeModal}>
+          <div className="guest__modal__button" onClick={closeMoneyModal}>
             <span>확인</span>
+          </div>
+        </Modal>
+      </div>
+      <div>
+        <Modal
+          isOpen={commentModalIsOpen}
+          onAfterOpen={afterOpenCommentModal}
+          onRequestClose={closeCommentModal}
+          style={customStyles}
+          contentLabel="Comment Modal"
+        >
+          <div className="guest__modal__title">Message</div>
+          <div className="guest__modal__coment">
+            저의 부부에게만 보여지는 메세지입니다.
+          </div>
+          <div className="guest__modal__coment">이게 기능이 되려나</div>
+
+          <div className="guest__modal__submit" onClick={closeCommentModal}>
+            <span>전송할수있을까</span>
           </div>
         </Modal>
       </div>

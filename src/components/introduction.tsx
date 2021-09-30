@@ -20,7 +20,7 @@ export const Introduction = () => {
         </p>
       </div>
       <div className="introduction__people">
-        정OO·김OO 의 차남 정영석 <br />
+        정OO·송OO 의 장남 정영석 <br />
         최OO·강OO 의 차녀 최수지
       </div>
     </section>

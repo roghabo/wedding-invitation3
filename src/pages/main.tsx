@@ -7,6 +7,7 @@ import { Location } from "../components/location";
 import { Thanks } from "../components/thanks";
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import { Image } from "../components/image";
 
 const override = css`
   display: block;
@@ -30,6 +31,7 @@ export const Main = () => {
       ) : (
         <div className="wrapper">
           <Cover />
+          <Image />
           <Introduction />
           <Gallery />
           <Location />

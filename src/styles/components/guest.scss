@@ -60,6 +60,11 @@
       @extend %modal_btn;
       background-color: #f6f6f6;
     }
+    &__submit {
+      @extend %modal_btn;
+      background-color: #1a1a1a;
+      color: white;
+    }
   }
 }
 

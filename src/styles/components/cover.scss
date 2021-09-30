@@ -3,4 +3,22 @@
     width: 100%;
     aspect-ratio: 9 / 16;
   }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px;
+    transform: translateY(-36px);
+  }
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 8px;
+  }
+  &__location {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 140%;
+  }
 }

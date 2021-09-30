@@ -16,7 +16,7 @@ const override = css`
 export const Main = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    window.Kakao.init(window.document.location.href);
+    window.Kakao.init("269b68bfe2b4ab87ffa190e8e00365e7");
     setLoading(false);
   }, [setLoading]);
   return (

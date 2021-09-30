@@ -30,7 +30,7 @@ Swiper.use([Navigation]);
 export const Gallery = () => {
   useEffect(() => {
     new Swiper(".swiper-container", {
-      speed: 500,
+      speed: 700,
       spaceBetween: 10,
       navigation: {
         nextEl: ".swiper-button-next",

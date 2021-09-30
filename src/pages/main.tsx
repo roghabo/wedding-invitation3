@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Cover } from "../components/cover";
-import { Footer } from "../components/footer";
 import { Gallery } from "../components/gallery";
 import { Guest } from "../components/guest";
 import { Introduction } from "../components/introduction";
@@ -27,7 +26,6 @@ export const Main = () => {
           <Location />
           <Guest />
           <Thanks />
-          <Footer />
         </div>
       )}
     </>

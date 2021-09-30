@@ -20,4 +20,23 @@
       line-height: 140%;
     }
   }
+  &__share {
+    img {
+      width: 16px;
+      height: 16px;
+      margin-right: 12px;
+    }
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 181px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    margin-top: 28px;
+    cursor: pointer;
+  }
 }

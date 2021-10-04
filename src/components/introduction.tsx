@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Typewriter from "typewriter-effect";
 
 export const Introduction = () => {
+  const [effectStart, seteffectStart] = useState(false);
+  useEffect(() => {
+    const setEffect = (e: any) => {
+      if (e.target.scrollTop >= 410) {
+        seteffectStart(true);
+      }
+    };
+    window.addEventListener("scroll", setEffect, true);
+    return () => window.removeEventListener("scroll", setEffect, true);
+  }, []);
   return (
     <section className="introduction">
       <div className="introduction__title">
-        <p>
-          안녕하세요. <br />
-          정영석, 최수지입니다.
-        </p>
+        {effectStart && (
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("안녕하세요. <br /> 정영석, 최수지입니다.")
+                .start();
+            }}
+            options={{
+              autoStart: false,
+            }}
+          />
+        )}
       </div>
       <div className="introduction__content">
         <p>

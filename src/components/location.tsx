@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Typewriter from "typewriter-effect";
 
 export const Location = () => {
+  const [effectStart, seteffectStart] = useState(false);
   const [active, setActive] = useState("subway");
   useEffect(() => {
     const map = new naver.maps.Map("map", {
@@ -11,6 +13,13 @@ export const Location = () => {
       position: new naver.maps.LatLng(35.807987, 127.134939),
       map: map,
     });
+    const setEffect = (e: any) => {
+      if (e.target.scrollTop >= 1750) {
+        seteffectStart(true);
+      }
+    };
+    window.addEventListener("scroll", setEffect, true);
+    return () => window.removeEventListener("scroll", setEffect, true);
   }, []);
   return (
     <section className="location">
@@ -18,10 +27,18 @@ export const Location = () => {
         <p>Location</p>
       </div>
       <div className="location__location">
-        <span>
-          바울교회 바울센터 <br />
-          7층 아트홀
-        </span>
+        {effectStart && (
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("바울교회 바울센터 <br /> 7층 아트홀")
+                .start();
+            }}
+            options={{
+              autoStart: false,
+            }}
+          />
+        )}
       </div>
       <div className="location__time">
         <span>2019.10.12 오전 11:30</span>

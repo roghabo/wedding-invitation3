@@ -4,15 +4,16 @@ import mainImg from "../images/mainImg.png";
 export const Cover = () => {
   let y = 0;
   const [scrollTop, setScrollTop] = useState(0);
-  const scrollEvent = (e: any) => {
-    if (e.target.scrollTop <= 38 * 5) {
-      setScrollTop(y + e.target.scrollTop / 5);
-    }
-  };
+
   useEffect(() => {
+    const scrollEvent = (e: any) => {
+      if (e.target.scrollTop <= 38 * 5) {
+        setScrollTop(y + e.target.scrollTop / 5);
+      }
+    };
     window.addEventListener("scroll", scrollEvent, true);
     return () => window.removeEventListener("scroll", scrollEvent, true);
-  }, []);
+  }, [y]);
 
   return (
     <section className="cover">

@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import mainImg from "../images/mainImg.png";
 
 export const Cover = () => {
+  let y = 0;
   const [scrollTop, setScrollTop] = useState(0);
+  const scrollEvent = (e: any) => {
+    if (e.target.scrollTop <= 38 * 5) {
+      setScrollTop(y + e.target.scrollTop / 5);
+    }
+  };
   useEffect(() => {
-    const ssss = (e: any) => {
-      if (e.target.scrollTop <= 36) {
-        setScrollTop(e.target.scrollTop);
-      }
-    };
-    window.addEventListener("scroll", ssss, true);
-    return () => window.removeEventListener("scroll", ssss, true);
+    window.addEventListener("scroll", scrollEvent, true);
+    return () => window.removeEventListener("scroll", scrollEvent, true);
   }, []);
 
   return (

@@ -33,6 +33,9 @@ export const Thanks = () => {
           </div>
         </div>
       </div>
+      <div className="thanks__copyright">
+        <span>Copyright 2021. SISUH. all rights reserved.</span>
+      </div>
     </section>
   );
 };

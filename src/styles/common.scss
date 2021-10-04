@@ -9,13 +9,15 @@ body {
   align-items: center;
   justify-content: center;
   color: #1a1a1a;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 .wrapper {
   width: 100vw;
   height: 100vh;
-  @media (min-width: 414px) {
-    width: 414px !important;
+  @media (min-width: 420px) {
+    width: 420px !important;
   }
   overflow-x: hidden;
 }

@@ -48,6 +48,9 @@
         line-height: 12px;
         color: #484848;
         margin-bottom: 12px;
+        &.black {
+          color: #1a1a1a;
+        }
       }
       &__text {
         font-weight: 400;
@@ -64,6 +67,34 @@
       @extend %modal_btn;
       background-color: #1a1a1a;
       color: white;
+    }
+    &__form {
+      &__input {
+        width: 100%;
+        margin-bottom: 40px;
+        border: none;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 12px;
+        &:focus {
+          outline: none;
+        }
+        ::placeholder {
+          color: #bdbdbd;
+          font-size: 14px;
+          line-height: 129%;
+          font-weight: 400;
+        }
+      }
+      &__textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #1a1a1a;
+        resize: none;
+        padding-bottom: 12px;
+        &:focus {
+          outline: none;
+        }
+      }
     }
   }
 }

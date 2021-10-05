@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import TextareaAutosize from "react-textarea-autosize";
 import arrow from "../images/ic_r_b_3x.png";
 
 const customStyles = {
@@ -19,12 +20,15 @@ const customStyles = {
     padding: "32px 24px",
     border: "none",
     borderRadius: "none",
+    width: "80%",
+    maxWidth: "340px",
   },
 };
 
 export const Guest = () => {
   const [moneyModalIsOpen, setMoneyModalIsOpen] = useState(false);
   const [commentModalIsOpen, setCommentModalIsOpen] = useState(false);
+  const [attendModalIsOpen, setAttendModalIsOpen] = useState(false);
 
   function openMoneyModal() {
     setMoneyModalIsOpen(true);
@@ -46,9 +50,22 @@ export const Guest = () => {
     setCommentModalIsOpen(false);
   }
 
+  function openAttendModal() {
+    setAttendModalIsOpen(true);
+  }
+
+  function afterOpenAttendModal() {}
+
+  function closeAttendModal() {
+    setAttendModalIsOpen(false);
+  }
+
   const copyAccount = () => {
     alert("계좌번호가 복사되었습니다.");
   };
+  useEffect(() => {
+    Modal.setAppElement("body");
+  }, []);
   return (
     <section className="guest">
       <div className="guest__title">
@@ -57,6 +74,11 @@ export const Guest = () => {
       <div className="guest__text">
         <p>저희를 향한 축하의 마음을 전해주세요.</p>
       </div>
+      <div className="guest__box" onClick={openAttendModal}>
+        <p>결혼식 참석 명단 작성</p>
+        <img src={arrow} alt="" />
+      </div>
+
       <div className="guest__box" onClick={openCommentModal}>
         <p>축하 메시지 남기기</p>
         <img src={arrow} alt="" />
@@ -121,10 +143,82 @@ export const Guest = () => {
           <div className="guest__modal__coment">
             저의 부부에게만 보여지는 메세지입니다.
           </div>
-          <div className="guest__modal__coment">이게 기능이 되려나</div>
-
+          <form className="guest__modal__form">
+            <div className="guest__modal__contents__title black">
+              <span>
+                이름 <span style={{ color: "#EEAA25" }}>*</span>
+              </span>
+            </div>
+            <input
+              className="guest__modal__form__input"
+              type="text"
+              placeholder="이름을 작성해주세요."
+              required
+            />
+            <div className="guest__modal__contents__title black">
+              <span>
+                관계 <span style={{ color: "#EEAA25" }}>*</span>
+              </span>
+            </div>
+            <div className="guest__modal__contents__title black">
+              <span>
+                축하 메시지 <span style={{ color: "#EEAA25" }}>*</span>
+              </span>
+            </div>
+            <TextareaAutosize
+              maxRows={3}
+              className="guest__modal__form__textarea"
+              placeholder="내용을 작성해주세요."
+            />
+          </form>
           <div className="guest__modal__submit" onClick={closeCommentModal}>
-            <span>전송할수있을까</span>
+            <span>전송</span>
+          </div>
+        </Modal>
+      </div>
+      <div>
+        <Modal
+          isOpen={attendModalIsOpen}
+          onAfterOpen={afterOpenAttendModal}
+          onRequestClose={closeAttendModal}
+          style={customStyles}
+          contentLabel="Attend Modal"
+        >
+          <div className="guest__modal__title">Attend</div>
+          <div className="guest__modal__coment">
+            결혼식에 참여하실 경우 아래 내용을 작성해주세요.
+          </div>
+          <form className="guest__modal__form">
+            <div className="guest__modal__contents__title black">
+              <span>
+                참석자 성함 <span style={{ color: "#EEAA25" }}>*</span>
+              </span>
+            </div>
+            <input
+              className="guest__modal__form__input"
+              type="text"
+              placeholder="이름을 작성해주세요."
+              required
+            />
+            <div className="guest__modal__contents__title black">
+              <span>
+                관계 <span style={{ color: "#EEAA25" }}>*</span>
+              </span>
+            </div>
+            <div className="guest__modal__contents__title black">
+              <span>
+                총 인원 <span style={{ color: "#EEAA25" }}>*</span>
+              </span>
+            </div>
+            <input
+              className="guest__modal__form__input"
+              type="text"
+              placeholder="본인을 포함한 총 인원 수를 작성해주세요."
+              required
+            />
+          </form>
+          <div className="guest__modal__submit" onClick={closeAttendModal}>
+            <span>전송</span>
           </div>
         </Modal>
       </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import TextareaAutosize from "react-textarea-autosize";
+import { useForm, SubmitHandler } from "react-hook-form";
 import arrow from "../images/ic_r_b_3x.png";
 
 const customStyles = {
@@ -25,10 +26,34 @@ const customStyles = {
   },
 };
 
+interface IAttendForm {
+  name: string;
+  relation: string;
+  count: number;
+}
+
+interface ICommentForm {
+  name: string;
+  relation: string;
+  message: string;
+}
+
 export const Guest = () => {
   const [moneyModalIsOpen, setMoneyModalIsOpen] = useState(false);
   const [commentModalIsOpen, setCommentModalIsOpen] = useState(false);
   const [attendModalIsOpen, setAttendModalIsOpen] = useState(false);
+
+  const { register: attendRegister, handleSubmit: attendHandleSubmit } =
+    useForm<IAttendForm>();
+
+  const { register: commentRegister, handleSubmit: commentHandleSubmit } =
+    useForm<ICommentForm>();
+
+  const handleAttendFormSubmit: SubmitHandler<IAttendForm> = (data) =>
+    console.log(data);
+
+  const handleCommentFormSubmit: SubmitHandler<ICommentForm> = (data) =>
+    console.log(data);
 
   function openMoneyModal() {
     setMoneyModalIsOpen(true);
@@ -143,13 +168,17 @@ export const Guest = () => {
           <div className="guest__modal__coment">
             저의 부부에게만 보여지는 메세지입니다.
           </div>
-          <form className="guest__modal__form">
+          <form
+            className="guest__modal__form"
+            onSubmit={commentHandleSubmit(handleCommentFormSubmit)}
+          >
             <div className="guest__modal__contents__title black">
               <span>
                 이름 <span style={{ color: "#EEAA25" }}>*</span>
               </span>
             </div>
             <input
+              {...commentRegister("name")}
               className="guest__modal__form__input"
               type="text"
               placeholder="이름을 작성해주세요."
@@ -160,6 +189,30 @@ export const Guest = () => {
                 관계 <span style={{ color: "#EEAA25" }}>*</span>
               </span>
             </div>
+            <div className="guest__modal__form__genders">
+              <div className="guest__modal__form__genders__gender">
+                <input
+                  {...commentRegister("relation")}
+                  type="radio"
+                  id="gender_male"
+                  name="relation"
+                  value="신랑"
+                  required
+                />
+                <label htmlFor="gender_male">신랑 측</label>
+              </div>
+              <div className="guest__modal__form__genders__gender">
+                <input
+                  {...commentRegister("relation")}
+                  type="radio"
+                  id="gender_female"
+                  name="relation"
+                  value="신부"
+                  required
+                />
+                <label htmlFor="gender_female">신부 측</label>
+              </div>
+            </div>
             <div className="guest__modal__contents__title black">
               <span>
                 축하 메시지 <span style={{ color: "#EEAA25" }}>*</span>
@@ -169,11 +222,12 @@ export const Guest = () => {
               maxRows={3}
               className="guest__modal__form__textarea"
               placeholder="내용을 작성해주세요."
+              {...commentRegister("message")}
             />
+            <button className="guest__modal__submit" type="submit">
+              <span>전송</span>
+            </button>
           </form>
-          <div className="guest__modal__submit" onClick={closeCommentModal}>
-            <span>전송</span>
-          </div>
         </Modal>
       </div>
       <div>
@@ -188,22 +242,51 @@ export const Guest = () => {
           <div className="guest__modal__coment">
             결혼식에 참여하실 경우 아래 내용을 작성해주세요.
           </div>
-          <form className="guest__modal__form">
+          <form
+            className="guest__modal__form"
+            onSubmit={attendHandleSubmit(handleAttendFormSubmit)}
+          >
             <div className="guest__modal__contents__title black">
               <span>
                 참석자 성함 <span style={{ color: "#EEAA25" }}>*</span>
               </span>
             </div>
             <input
+              {...attendRegister("name")}
               className="guest__modal__form__input"
               type="text"
               placeholder="이름을 작성해주세요."
               required
+              name="name"
             />
             <div className="guest__modal__contents__title black">
               <span>
                 관계 <span style={{ color: "#EEAA25" }}>*</span>
               </span>
+            </div>
+            <div className="guest__modal__form__genders">
+              <div className="guest__modal__form__genders__gender">
+                <input
+                  {...attendRegister("relation")}
+                  type="radio"
+                  id="gender_male"
+                  name="relation"
+                  value="신랑"
+                  required
+                />
+                <label htmlFor="gender_male">신랑 측</label>
+              </div>
+              <div className="guest__modal__form__genders__gender">
+                <input
+                  {...attendRegister("relation")}
+                  type="radio"
+                  id="gender_female"
+                  name="relation"
+                  value="신부"
+                  required
+                />
+                <label htmlFor="gender_female">신부 측</label>
+              </div>
             </div>
             <div className="guest__modal__contents__title black">
               <span>
@@ -211,15 +294,17 @@ export const Guest = () => {
               </span>
             </div>
             <input
-              className="guest__modal__form__input"
+              {...attendRegister("count", { pattern: /^[0-9]+$/i })}
+              className="guest__modal__form__input mb-0"
               type="text"
               placeholder="본인을 포함한 총 인원 수를 작성해주세요."
               required
+              name="count"
             />
+            <button className="guest__modal__submit" type="submit">
+              <span>전송</span>
+            </button>
           </form>
-          <div className="guest__modal__submit" onClick={closeAttendModal}>
-            <span>전송</span>
-          </div>
         </Modal>
       </div>
     </section>

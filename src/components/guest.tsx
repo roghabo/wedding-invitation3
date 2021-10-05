@@ -4,6 +4,8 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import TextareaAutosize from "react-textarea-autosize";
 import { useForm, SubmitHandler } from "react-hook-form";
 import arrow from "../images/ic_r_b_3x.png";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../fbase";
 
 const customStyles = {
   overlay: {
@@ -49,11 +51,44 @@ export const Guest = () => {
   const { register: commentRegister, handleSubmit: commentHandleSubmit } =
     useForm<ICommentForm>();
 
-  const handleAttendFormSubmit: SubmitHandler<IAttendForm> = (data) =>
-    console.log(data);
+  const handleAttendFormSubmit: SubmitHandler<IAttendForm> = async ({
+    name,
+    relation,
+    count,
+  }) => {
+    try {
+      const docRef = await addDoc(collection(db, "attend"), {
+        name,
+        relation,
+        count,
+      });
+      console.log("Document written with ID: ", docRef.id);
+      closeAttendModal();
+      alert("전송되었습니다.");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
-  const handleCommentFormSubmit: SubmitHandler<ICommentForm> = (data) =>
-    console.log(data);
+  const handleCommentFormSubmit: SubmitHandler<ICommentForm> = async ({
+    name,
+    relation,
+    message,
+  }) => {
+    try {
+      const docRef = await addDoc(collection(db, "message"), {
+        name,
+        relation,
+        message,
+        createdAt: Date.now(),
+      });
+      console.log("Document written with ID: ", docRef.id);
+      closeCommentModal();
+      alert("방명록이 작성되었습니다.");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
   function openMoneyModal() {
     setMoneyModalIsOpen(true);

@@ -51,6 +51,17 @@ export const Guest = () => {
   const { register: commentRegister, handleSubmit: commentHandleSubmit } =
     useForm<ICommentForm>();
 
+  const getFormatDate = () => {
+    const today = new Date();
+    var year: any = today.getFullYear();
+    year = (year + "").slice(2);
+    let month: any = 1 + today.getMonth();
+    month = month >= 10 ? month : "0" + month;
+    var day: any = today.getDate();
+    day = day >= 10 ? day : "0" + day;
+    return year + "." + month + "." + day;
+  };
+
   const handleAttendFormSubmit: SubmitHandler<IAttendForm> = async ({
     name,
     relation,
@@ -76,11 +87,12 @@ export const Guest = () => {
     message,
   }) => {
     try {
+      const createdAt = getFormatDate();
       const docRef = await addDoc(collection(db, "message"), {
         name,
         relation,
         message,
-        createdAt: Date.now(),
+        createdAt,
       });
       console.log("Document written with ID: ", docRef.id);
       closeCommentModal();
@@ -231,7 +243,7 @@ export const Guest = () => {
                   type="radio"
                   id="gender_male"
                   name="relation"
-                  value="신랑"
+                  value="신랑 측"
                   required
                 />
                 <label htmlFor="gender_male">신랑 측</label>
@@ -242,7 +254,7 @@ export const Guest = () => {
                   type="radio"
                   id="gender_female"
                   name="relation"
-                  value="신부"
+                  value="신부 측"
                   required
                 />
                 <label htmlFor="gender_female">신부 측</label>
@@ -275,7 +287,7 @@ export const Guest = () => {
         >
           <div className="guest__modal__title">Attend</div>
           <div className="guest__modal__coment">
-            결혼식에 참여하실 경우 아래 내용을 작성해주세요.
+            결혼식에 참석하실 경우 아래 내용을 작성해주세요.
           </div>
           <form
             className="guest__modal__form"
@@ -306,7 +318,7 @@ export const Guest = () => {
                   type="radio"
                   id="gender_male"
                   name="relation"
-                  value="신랑"
+                  value="신랑 측"
                   required
                 />
                 <label htmlFor="gender_male">신랑 측</label>
@@ -317,7 +329,7 @@ export const Guest = () => {
                   type="radio"
                   id="gender_female"
                   name="relation"
-                  value="신부"
+                  value="신부 측"
                   required
                 />
                 <label htmlFor="gender_female">신부 측</label>

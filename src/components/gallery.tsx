@@ -4,7 +4,7 @@ import "swiper/swiper.scss";
 import "swiper/swiper-bundle";
 import leftArrow from "../images/ic_l_b_3x.png";
 import rightArrow from "../images/ic_r_b_3x.png";
-import Img1 from "../images/gallery/img1.jpeg";
+// import Img1 from "../images/gallery/img1.jpeg";
 import Img2 from "../images/gallery/img2.jpeg";
 import Img3 from "../images/gallery/img3.jpeg";
 import Img4 from "../images/gallery/img4.jpeg";

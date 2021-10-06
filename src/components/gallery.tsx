@@ -48,7 +48,9 @@ export const Gallery = () => {
           <div className="swiper-container">
             <div className="swiper-wrapper">
               <div className="swiper-slide">
-                <img className="swiper-slide__img" src={Img1} alt="" />
+                <div className="gallery__swiper__img__wrapper">
+                  <img className="swiper-slide__img" src={Img1} alt="" />
+                </div>
               </div>
               <div className="swiper-slide">
                 <img className="swiper-slide__img" src={Img2} alt="" />

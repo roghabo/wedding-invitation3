@@ -4,6 +4,7 @@ import { db } from "../fbase";
 
 export const GuestMessage = () => {
   const [active, setActive] = useState("all");
+  const [totalCount, setTotalCount] = useState(0);
   const [messages, setMessages] = useState<any[] | []>([]);
   const getMessages = async (filter: any) => {
     if (filter === "all") {
@@ -15,6 +16,7 @@ export const GuestMessage = () => {
         };
         setMessages((prev) => [messageObject, ...prev]);
       });
+      setTotalCount(dbMessages.size);
     } else {
       const q = query(
         collection(db, "message"),
@@ -49,7 +51,7 @@ export const GuestMessage = () => {
           className={`guest_book__tabs__tab ${active === "all" && "active"}`}
           onClick={() => clickTab("all")}
         >
-          <span>전체</span>
+          <span>전체 {totalCount}</span>
         </div>
         <div
           className={`guest_book__tabs__tab ${

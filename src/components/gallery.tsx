@@ -4,7 +4,7 @@ import "swiper/swiper.scss";
 import "swiper/swiper-bundle";
 import leftArrow from "../images/ic_l_b_3x.png";
 import rightArrow from "../images/ic_r_b_3x.png";
-// import Img1 from "../images/gallery/img1.jpeg";
+import Img1 from "../images/gallery/img1.jpeg";
 import Img2 from "../images/gallery/img2.jpeg";
 import Img3 from "../images/gallery/img3.jpeg";
 import Img4 from "../images/gallery/img4.jpeg";
@@ -48,9 +48,7 @@ export const Gallery = () => {
           <div className="swiper-container">
             <div className="swiper-wrapper">
               <div className="swiper-slide">
-                <div className="gallery__swiper__img__wrapper">
-                  {/* <img className="swiper-slide__img" src={Img1} alt="" /> */}
-                </div>
+                <img className="swiper-slide__img" src={Img1} alt="" />
               </div>
               <div className="swiper-slide">
                 <img className="swiper-slide__img" src={Img2} alt="" />

@@ -57,8 +57,9 @@ export const Location = () => {
         {active === "bus" && <span>100번 버스</span>}
         {active === "car" && <span>자가용</span>}
       </div>
-      <div id="map" className="location__map-container" />
-
+      <div className="location__map__container">
+        <div id="map" className="location__map" />
+      </div>
       <div
         className="location__map-btn"
         onClick={() =>

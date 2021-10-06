@@ -17,6 +17,10 @@
         height: 100%;
         display: flex;
         align-items: center;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
       }
     }
   }

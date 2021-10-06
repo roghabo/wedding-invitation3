@@ -18,6 +18,9 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        -o-background-size: contain;
+        -moz-background-size: contain;
+        -webkit-background-size: contain;
       }
     }
   }

@@ -82,13 +82,15 @@ export const GuestMessage = () => {
                   </div>
                 </div>
                 <div className="guest_book__message__header__container">
-                  <div
-                    className={`guest_book__message__header__relation ${
-                      message.relation === "신부 측" && "f"
-                    }`}
-                  >
-                    {message.relation}
-                  </div>
+                  {active === "all" && (
+                    <div
+                      className={`guest_book__message__header__relation ${
+                        message.relation === "신부 측" && "f"
+                      }`}
+                    >
+                      {message.relation}
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="guest_book__message__content">

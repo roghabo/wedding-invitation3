@@ -11,7 +11,7 @@ export const MainRouter = () => {
         <Route path="/" exact>
           <Main />
         </Route>
-        <Route path="/guestbook" exact>
+        <Route path="/19A996471E1C73141E55FBCBECBEB" exact>
           <GuestBook />
         </Route>
         <Route>

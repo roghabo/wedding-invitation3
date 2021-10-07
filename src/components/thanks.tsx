@@ -33,7 +33,7 @@ export const Thanks = () => {
             <span>모바일 청첩장 공유하기</span>
           </div>
         </div>
-        <Link to="/guestbook">Guest Book</Link>
+        <Link to="/19A996471E1C73141E55FBCBECBEB">Guest Book</Link>
       </div>
       <div className="thanks__copyright">
         <span>Copyright 2021. SISUH. all rights reserved.</span>

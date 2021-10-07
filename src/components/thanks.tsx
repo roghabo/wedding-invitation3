@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import thanksImg from "../images/thanks_img.png";
 import share from "../images/share.png";
+import { Link } from "react-router-dom";
 
 export const Thanks = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ export const Thanks = () => {
             <span>모바일 청첩장 공유하기</span>
           </div>
         </div>
+        <Link to="/guestbook">Guest Book</Link>
       </div>
       <div className="thanks__copyright">
         <span>Copyright 2021. SISUH. all rights reserved.</span>

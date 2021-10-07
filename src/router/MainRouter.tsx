@@ -11,7 +11,7 @@ export const MainRouter = () => {
         <Route path="/" exact>
           <Main />
         </Route>
-        <Route path="/19A996471E1C73141E55FBCBECBEB" exact>
+        <Route path={`/${process.env.REACT_APP_PATH}`} exact>
           <GuestBook />
         </Route>
         <Route>

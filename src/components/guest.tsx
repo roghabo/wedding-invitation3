@@ -401,9 +401,14 @@ export const Guest = () => {
               placeholder="본인을 포함한 총 인원 수를 작성해주세요."
               name="count"
             />
-            {attendErrors.count && (
+            {attendErrors.count?.type === "required" && (
               <div className="guest__modal__form__error">
                 총 인원 수를 작성해주세요.
+              </div>
+            )}
+            {attendErrors.count?.type === "pattern" && (
+              <div className="guest__modal__form__error">
+                숫자를 입력해주세요.
               </div>
             )}
             <button className="guest__modal__submit" type="submit">

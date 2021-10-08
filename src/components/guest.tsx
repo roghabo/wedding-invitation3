@@ -45,11 +45,17 @@ export const Guest = () => {
   const [commentModalIsOpen, setCommentModalIsOpen] = useState(false);
   const [attendModalIsOpen, setAttendModalIsOpen] = useState(false);
 
-  const { register: attendRegister, handleSubmit: attendHandleSubmit } =
-    useForm<IAttendForm>();
+  const {
+    register: attendRegister,
+    handleSubmit: attendHandleSubmit,
+    formState: { errors: attendErrors },
+  } = useForm<IAttendForm>();
 
-  const { register: commentRegister, handleSubmit: commentHandleSubmit } =
-    useForm<ICommentForm>();
+  const {
+    register: commentRegister,
+    handleSubmit: commentHandleSubmit,
+    formState: { errors: commentErrors },
+  } = useForm<ICommentForm>();
 
   const getFormatDate = () => {
     const today = new Date();
@@ -225,41 +231,60 @@ export const Guest = () => {
               </span>
             </div>
             <input
-              {...commentRegister("name")}
-              className="guest__modal__form__input"
+              {...commentRegister("name", { required: true })}
               type="text"
               placeholder="이름을 작성해주세요."
-              required
+              className={`guest__modal__form__input ${
+                commentErrors.name && "error"
+              }`}
             />
+
+            {commentErrors.name && (
+              <div className="guest__modal__form__error">
+                참석자 성함을 작성해주세요.
+              </div>
+            )}
+
             <div className="guest__modal__contents__title black">
               <span>
                 관계 <span style={{ color: "#EEAA25" }}>*</span>
               </span>
             </div>
             <div className="guest__modal__form__genders">
-              <div className="guest__modal__form__genders__gender">
+              <div
+                className={`guest__modal__form__genders__gender ${
+                  commentErrors.relation && "error"
+                }`}
+              >
                 <input
-                  {...commentRegister("relation")}
+                  {...commentRegister("relation", { required: true })}
                   type="radio"
                   id="gender_male"
                   name="relation"
                   value="신랑 측"
-                  required
                 />
                 <label htmlFor="gender_male">신랑 측</label>
               </div>
-              <div className="guest__modal__form__genders__gender">
+              <div
+                className={`guest__modal__form__genders__gender ${
+                  commentErrors.relation && "error"
+                }`}
+              >
                 <input
-                  {...commentRegister("relation")}
+                  {...commentRegister("relation", { required: true })}
                   type="radio"
                   id="gender_female"
                   name="relation"
                   value="신부 측"
-                  required
                 />
                 <label htmlFor="gender_female">신부 측</label>
               </div>
             </div>
+            {commentErrors.relation && (
+              <div className="guest__modal__form__error">
+                관계를 선택해주세요.
+              </div>
+            )}
             <div className="guest__modal__contents__title black">
               <span>
                 축하 메시지 <span style={{ color: "#EEAA25" }}>*</span>
@@ -267,10 +292,17 @@ export const Guest = () => {
             </div>
             <TextareaAutosize
               maxRows={3}
-              className="guest__modal__form__textarea"
+              className={`guest__modal__form__textarea ${
+                commentErrors.message && "error"
+              }`}
               placeholder="내용을 작성해주세요."
-              {...commentRegister("message")}
+              {...commentRegister("message", { required: true })}
             />
+            {commentErrors.message && (
+              <div className="guest__modal__form__error">
+                메시지를 작성해주세요.
+              </div>
+            )}
             <button className="guest__modal__submit" type="submit">
               <span>전송</span>
             </button>
@@ -299,55 +331,81 @@ export const Guest = () => {
               </span>
             </div>
             <input
-              {...attendRegister("name")}
-              className="guest__modal__form__input"
+              {...attendRegister("name", { required: true })}
+              className={`guest__modal__form__input ${
+                attendErrors.name && "error"
+              }`}
               type="text"
               placeholder="이름을 작성해주세요."
-              required
               name="name"
             />
+            {attendErrors.name && (
+              <div className="guest__modal__form__error">
+                참석자 성함을 작성해주세요.
+              </div>
+            )}
             <div className="guest__modal__contents__title black">
               <span>
                 관계 <span style={{ color: "#EEAA25" }}>*</span>
               </span>
             </div>
             <div className="guest__modal__form__genders">
-              <div className="guest__modal__form__genders__gender">
+              <div
+                className={`guest__modal__form__genders__gender ${
+                  attendErrors.relation && "error"
+                }`}
+              >
                 <input
-                  {...attendRegister("relation")}
+                  {...attendRegister("relation", { required: true })}
                   type="radio"
                   id="gender_male"
                   name="relation"
                   value="신랑 측"
-                  required
                 />
                 <label htmlFor="gender_male">신랑 측</label>
               </div>
-              <div className="guest__modal__form__genders__gender">
+              <div
+                className={`guest__modal__form__genders__gender ${
+                  attendErrors.relation && "error"
+                }`}
+              >
                 <input
-                  {...attendRegister("relation")}
+                  {...attendRegister("relation", { required: true })}
                   type="radio"
                   id="gender_female"
                   name="relation"
                   value="신부 측"
-                  required
                 />
                 <label htmlFor="gender_female">신부 측</label>
               </div>
             </div>
+            {attendErrors.relation && (
+              <div className="guest__modal__form__error">
+                관계를 선택해주세요.
+              </div>
+            )}
             <div className="guest__modal__contents__title black">
               <span>
                 총 인원 <span style={{ color: "#EEAA25" }}>*</span>
               </span>
             </div>
             <input
-              {...attendRegister("count", { pattern: /^[0-9]+$/i })}
-              className="guest__modal__form__input mb-0"
+              {...attendRegister("count", {
+                pattern: /^[0-9]+$/i,
+                required: true,
+              })}
+              className={`guest__modal__form__input mb-0 ${
+                attendErrors.count && "error"
+              }`}
               type="text"
               placeholder="본인을 포함한 총 인원 수를 작성해주세요."
-              required
               name="count"
             />
+            {attendErrors.count && (
+              <div className="guest__modal__form__error">
+                총 인원 수를 작성해주세요.
+              </div>
+            )}
             <button className="guest__modal__submit" type="submit">
               <span>전송</span>
             </button>

@@ -35,7 +35,7 @@
       font-size: 14px;
       line-height: 140%;
       color: #828282;
-      margin-bottom: 48px;
+      margin-bottom: 8px;
     }
     &__contents {
       margin-bottom: 40px;
@@ -44,6 +44,7 @@
         font-size: 12px;
         color: #484848;
         margin-bottom: 12px;
+        margin-top: 40px;
         &.black {
           color: #1a1a1a;
         }
@@ -66,7 +67,6 @@
     &__form {
       &__input {
         width: 100%;
-        margin-bottom: 40px;
         border: none;
         border-bottom: 1px solid #1a1a1a;
         padding-bottom: 12px;
@@ -84,6 +84,9 @@
         &.mb-0 {
           margin-bottom: 0px;
         }
+        &.error {
+          border-bottom: 1px solid #ff4d40;
+        }
       }
       &__textarea {
         width: 100%;
@@ -97,12 +100,14 @@
         &:focus {
           outline: none;
         }
+        &.error {
+          border-bottom: 1px solid #ff4d40;
+        }
       }
       &__genders {
         display: flex;
         font-size: 14px;
         line-height: 129%;
-        margin-bottom: 40px;
         &__gender {
           &:first-child {
             margin-right: 10px;
@@ -128,7 +133,19 @@
             border: 1px solid #3284e3;
             color: #3284e3;
           }
+          &.error {
+            color: #ff4d40;
+            input[type="radio"] + label {
+              border: 1px solid #ff4d40;
+            }
+          }
         }
+      }
+      &__error {
+        font-size: 12px;
+        line-height: 100%;
+        color: #ff4d40;
+        margin-top: 6px;
       }
     }
   }

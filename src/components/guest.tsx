@@ -219,7 +219,7 @@ export const Guest = () => {
         >
           <div className="guest__modal__title">Message</div>
           <div className="guest__modal__coment">
-            저의 부부에게만 보여지는 메세지입니다.
+            저희 부부에게만 보여지는 메세지입니다.
           </div>
           <form
             className="guest__modal__form"

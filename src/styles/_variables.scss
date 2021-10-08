@@ -1,0 +1,29 @@
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%padding {
+  padding: 0px 40px;
+}
+
+%modal_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 130%;
+  width: 100%;
+  height: 48px;
+  cursor: pointer;
+  margin-top: 48px;
+  border: none;
+}
+
+%title {
+  font-family: "Cormorant Infant", serif;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 100%;
+}

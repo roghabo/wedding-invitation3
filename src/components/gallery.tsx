@@ -108,12 +108,12 @@ export const Gallery = () => {
                 <img className="swiper-slide__img" src={Img20} alt="" />
               </div>
             </div>
-            <div className="swiper-button-prev">
-              <img src={leftArrow} alt="leftArrow" />
-            </div>
-            <div className="swiper-button-next">
-              <img src={rightArrow} alt="rightArrow" />
-            </div>
+          </div>
+          <div className="swiper-button-prev">
+            <img src={leftArrow} alt="leftArrow" />
+          </div>
+          <div className="swiper-button-next">
+            <img src={rightArrow} alt="rightArrow" />
           </div>
         </div>
       </div>

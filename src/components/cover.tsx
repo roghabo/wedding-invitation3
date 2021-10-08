@@ -17,7 +17,9 @@ export const Cover = () => {
 
   return (
     <section className="cover">
-      <img src={mainImg} alt="" />
+      <div className="cover__img-container">
+        <img src={mainImg} alt="" />
+      </div>
       <div
         className="cover__container"
         style={{ transform: `translateY(-${scrollTop}px)` }}

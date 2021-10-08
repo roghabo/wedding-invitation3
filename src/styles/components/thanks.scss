@@ -21,18 +21,15 @@
     }
   }
   &__share {
+    @extend %flex-center;
     img {
       width: 16px;
       height: 16px;
       margin-right: 12px;
     }
-    font-weight: normal;
     font-size: 14px;
     line-height: 140%;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 181px;
     height: 40px;
     border: 1px solid #ffffff;
@@ -51,7 +48,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-
     font-size: 11px;
     line-height: 109%;
     letter-spacing: -0.01em;

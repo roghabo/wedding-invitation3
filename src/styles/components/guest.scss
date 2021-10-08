@@ -2,9 +2,9 @@
   @extend %padding;
   margin-bottom: 136px;
   &__title {
+    @extend %title;
     margin-top: 136px;
     margin-bottom: 12px;
-    @extend %title;
   }
   &__text {
     font-size: 14px;
@@ -100,7 +100,6 @@
       }
       &__genders {
         display: flex;
-
         font-size: 14px;
         line-height: 129%;
         margin-bottom: 40px;
@@ -108,17 +107,12 @@
           &:first-child {
             margin-right: 10px;
           }
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @extend %flex-center;
           background-color: white;
           width: 60px;
           height: 32px;
-
           input[type="radio"] + label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @extend %flex-center;
             width: 100%;
             height: 100%;
             border: 1px solid #dddddd;

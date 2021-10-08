@@ -14,7 +14,6 @@
   }
   &__time {
     @extend %padding;
-    font-weight: normal;
     font-size: 14px;
     line-height: 140%;
     color: #828282;
@@ -24,7 +23,6 @@
     margin: 0px 40px;
     display: flex;
     height: 26px;
-
     font-size: 14px;
     color: #bdbdbd;
     border-bottom: 1px solid #bdbdbd;
@@ -41,7 +39,6 @@
     }
     &__content {
       @extend %padding;
-
       height: 113px;
       font-size: 14px;
       line-height: 140%;
@@ -60,14 +57,11 @@
     }
   }
   &__map-btn {
+    @extend %flex-center;
     background-color: #1a1a1a;
     height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 14px;
     line-height: 130%;
-    font-weight: 400px;
     color: #e5e5e5;
     cursor: pointer;
   }

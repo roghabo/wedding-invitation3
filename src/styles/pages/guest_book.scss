@@ -1,4 +1,10 @@
 .guest_book {
+  position: relative;
+  height: 100vh;
+  &__loader {
+    @extend %flex-center;
+    height: 300px;
+  }
   &__main {
     position: relative;
     margin-bottom: 32px;
@@ -27,7 +33,6 @@
     line-height: 14px;
     color: #bdbdbd;
     border-bottom: 1px solid #f6f6f6;
-    margin-bottom: 12px;
     &__tab {
       height: 100%;
       display: flex;
@@ -40,12 +45,21 @@
       }
     }
   }
+  &__totalcount {
+    margin: 32px 24px;
+    font-size: 14px;
+    color: #bdbdbd;
+  }
   &__contents {
     margin: 0px 24px;
   }
   &__message {
     padding: 20px 0px;
     border-bottom: 1px solid #f6f6f6;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 96px;
+    }
     &__header {
       display: flex;
       align-items: flex-end;
@@ -58,6 +72,7 @@
       &__name {
         font-size: 18px;
         margin-right: 8px;
+        line-height: 100%;
       }
       &__date {
         font-size: 12px;
@@ -77,6 +92,58 @@
     &__content {
       font-size: 14px;
       line-height: 130%;
+    }
+  }
+  &__attend {
+    display: grid;
+    grid-template-columns: 12fr 19fr 19fr 19fr;
+    column-gap: 12px;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 96px;
+    }
+    &__header {
+      display: grid;
+      grid-template-columns: 12fr 19fr 19fr 19fr;
+      column-gap: 12px;
+      &__column {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+        font-size: 12px;
+        line-height: 100%;
+        color: #bdbdbd;
+        &:first-child {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    &__column {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 12px;
+      font-size: 14px;
+      line-height: 100%;
+      &:first-child {
+        justify-content: flex-start;
+      }
+    }
+  }
+  &__button {
+    @extend %flex-center;
+    position: fixed;
+    bottom: 0;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    img {
+      width: 24px;
+      height: 24px;
     }
   }
 }

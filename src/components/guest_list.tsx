@@ -8,52 +8,56 @@ const override = css`
   display: block;
   margin: 0 auto;
 `;
-export const GuestMessage = () => {
+export const GuestList = () => {
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState("all");
   const [totalCount, setTotalCount] = useState(0);
-  const [messages, setMessages] = useState<any[] | []>([]);
-  const getMessages = async (filter: any) => {
+  const [attends, setAttends] = useState<any[] | []>([]);
+  const getattends = async (filter: any) => {
     if (filter === "all") {
-      const dbMessages = await getDocs(collection(db, "message"));
-      dbMessages.forEach((document) => {
+      let total = 0;
+      const dbattends = await getDocs(collection(db, "attend"));
+      dbattends.forEach((document) => {
         const messageObject = {
           ...document.data(),
           id: document.id,
         };
-        setMessages((prev) => [messageObject, ...prev]);
+        total += parseInt(document.data().count);
+        setAttends((prev) => [messageObject, ...prev]);
       });
-      setTotalCount(dbMessages.size);
+      setTotalCount(total);
     } else {
+      let total = 0;
       const q = query(
-        collection(db, "message"),
+        collection(db, "attend"),
         where("relation", "==", filter)
       );
-      const dbMessages = await getDocs(q);
-      dbMessages.forEach((document) => {
+      const dbattends = await getDocs(q);
+      dbattends.forEach((document) => {
         const messageObject = {
           ...document.data(),
           id: document.id,
         };
-        setMessages((prev) => [messageObject, ...prev]);
+        total += parseInt(document.data().count);
+        setAttends((prev) => [messageObject, ...prev]);
       });
-      setTotalCount(dbMessages.size);
+      setTotalCount(total);
     }
   };
 
   const clickTab = (filter: any) => {
-    setMessages([]);
+    setAttends([]);
     setActive(filter);
-    getMessages(filter);
+    getattends(filter);
   };
   useEffect(() => {
-    getMessages("all");
+    getattends("all");
     setLoading(false);
   }, []);
   return (
     <>
       <div className="guest_book__title">
-        <span>Message</span>
+        <span>List</span>
       </div>
       <div className="guest_book__tabs">
         <div
@@ -80,11 +84,26 @@ export const GuestMessage = () => {
         </div>
       </div>
       <div className="guest_book__totalcount">
-        <span>
-          <span style={{ color: "#EEAA25" }}>{totalCount}</span>개의 메시지
-        </span>
+        {active === "all" ? (
+          <span>
+            총 <span style={{ color: "#EEAA25" }}>{totalCount}</span>명이
+            참석합니다.
+          </span>
+        ) : (
+          <span>
+            {active}
+            <span style={{ color: "#EEAA25" }}> {totalCount}</span>명이
+            참석합니다.
+          </span>
+        )}
       </div>
       <div className="guest_book__contents">
+        <div className="guest_book__attend__header">
+          <div className="guest_book__attend__header__column">No.</div>
+          <div className="guest_book__attend__header__column">이름</div>
+          <div className="guest_book__attend__header__column">총 인원</div>
+          <div className="guest_book__attend__header__column">관계</div>
+        </div>
         {loading ? (
           <div className="guest_book__loader">
             <PropagateLoader
@@ -96,31 +115,13 @@ export const GuestMessage = () => {
           </div>
         ) : (
           <div>
-            {messages.map((message) => (
-              <div className="guest_book__message" key={message.id}>
-                <div className="guest_book__message__header">
-                  <div className="guest_book__message__header__container">
-                    <div className="guest_book__message__header__name">
-                      {message.name}
-                    </div>
-                    <div className="guest_book__message__header__date">
-                      {message.createdAt}
-                    </div>
-                  </div>
-                  <div className="guest_book__message__header__container">
-                    {active === "all" && (
-                      <div
-                        className={`guest_book__message__header__relation ${
-                          message.relation === "신부 측" && "f"
-                        }`}
-                      >
-                        {message.relation}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div className="guest_book__message__content">
-                  <span>{message.message}</span>
+            {attends.map((attend, index) => (
+              <div className="guest_book__attend" key={attend.id}>
+                <div className="guest_book__attend__column">{index + 1}</div>
+                <div className="guest_book__attend__column">{attend.name}</div>
+                <div className="guest_book__attend__column">{attend.count}</div>
+                <div className="guest_book__attend__column">
+                  {attend.relation}
                 </div>
               </div>
             ))}

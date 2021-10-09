@@ -25,7 +25,7 @@ export const Thanks: React.FC<IThanksProps> = ({ thanksImg, text }) => {
   }, []);
   return (
     <section className="thanks">
-      <img src={thanksImg} alt="" />
+      <img className="thanks__img" src={thanksImg} alt="" />
       <div className="thanks__text-container">
         <div className="thanks__text-container__title">
           <p>Thanks</p>

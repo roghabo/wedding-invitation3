@@ -1,8 +1,10 @@
 .thanks {
   position: relative;
-  img {
+  padding-top: 177.78%;
+  &__img {
+    position: absolute !important;
+    top: 0;
     width: 100%;
-    aspect-ratio: 9 / 16;
   }
   &__text-container {
     position: absolute;

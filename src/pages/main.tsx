@@ -8,6 +8,7 @@ import { Gallery } from "../components/gallery";
 import { Location } from "../components/location";
 import { Guest } from "../components/guest";
 import { Thanks } from "../components/thanks";
+import mainImg from "../images/mainImg.png";
 
 const override = css`
   display: block;
@@ -31,7 +32,12 @@ export const Main = () => {
         />
       ) : (
         <div className="wrapper">
-          <Cover />
+          <Cover
+            date="2019.10.12"
+            location="바울교회 바울센터 7층 아트홀, AM 11:30"
+            name="Jung youngseok x Choi Suji"
+            mainImg={mainImg}
+          />
           <Image />
           <Introduction />
           <Gallery />

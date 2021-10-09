@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
-import mainImg from "../images/mainImg.png";
 
-export const Cover = () => {
+interface ICoverProps {
+  date: string;
+  location: string;
+  name: string;
+  mainImg: string;
+}
+
+export const Cover: React.FC<ICoverProps> = ({
+  date,
+  location,
+  name,
+  mainImg,
+}) => {
   let y = 0;
   const [scrollTop, setScrollTop] = useState(0);
 
@@ -25,12 +36,13 @@ export const Cover = () => {
         style={{ transform: `translateY(-${scrollTop}px)` }}
       >
         <div className="cover__title">
-          <span>2019.10.12</span>
+          <span>{date}</span>
         </div>
         <div className="cover__location">
           <span>
-            바울교회 바울센터 7층 아트홀, AM 11:30 <br />
-            Jung youngseok x Choi Suji
+            {location}
+            <br />
+            {name}
           </span>
         </div>
       </div>

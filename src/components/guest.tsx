@@ -190,8 +190,8 @@ export const Guest: React.FC<IGuestProps> = ({
             <div className="guest__modal__contents__title">
               <span>신랑측 계좌번호</span>
             </div>
-            {maleAccounts.map((account) => (
-              <div className="guest__modal__contents__text">
+            {maleAccounts.map((account, index) => (
+              <div className="guest__modal__contents__text" key={index}>
                 <CopyToClipboard onCopy={copyAccount} text={account}>
                   <span>{account}</span>
                 </CopyToClipboard>
@@ -202,8 +202,8 @@ export const Guest: React.FC<IGuestProps> = ({
             <div className="guest__modal__contents__title">
               <span>신부측 계좌번호</span>
             </div>
-            {femaleAccounts.map((account) => (
-              <div className="guest__modal__contents__text">
+            {femaleAccounts.map((account, index) => (
+              <div className="guest__modal__contents__text" key={index}>
                 <CopyToClipboard onCopy={copyAccount} text={account}>
                   <span>{account}</span>
                 </CopyToClipboard>

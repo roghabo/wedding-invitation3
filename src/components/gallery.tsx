@@ -31,8 +31,8 @@ export const Gallery: React.FC<IGalleryProps> = ({ photos }) => {
         <div className="gallery__swiper__wrapper">
           <div className="swiper-container">
             <div className="swiper-wrapper">
-              {photos.map((photo) => (
-                <div className="swiper-slide">
+              {photos.map((photo, index) => (
+                <div className="swiper-slide" key={index}>
                   <img className="swiper-slide__img" src={photo} alt="" />
                 </div>
               ))}

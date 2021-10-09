@@ -1,30 +1,43 @@
 import React, { useEffect, useState } from "react";
 
-export const Location = () => {
+interface IProjectProps {
+  latitude: number;
+  longitude: number;
+  date: string;
+  location: any;
+  subway: any;
+  bus: any;
+  car: any;
+}
+
+export const Location: React.FC<IProjectProps> = ({
+  latitude,
+  longitude,
+  date,
+  location,
+  subway,
+  bus,
+  car,
+}) => {
   const [active, setActive] = useState("subway");
   useEffect(() => {
     const map = new naver.maps.Map("map", {
-      center: new naver.maps.LatLng(35.807987, 127.134939),
+      center: new naver.maps.LatLng(latitude, longitude),
       zoom: 17,
     });
     new naver.maps.Marker({
-      position: new naver.maps.LatLng(35.807987, 127.134939),
+      position: new naver.maps.LatLng(latitude, longitude),
       map: map,
     });
-  }, []);
+  }, [latitude, longitude]);
   return (
     <section className="location">
       <div className="location__title">
         <span>Location</span>
       </div>
-      <div className="location__location">
-        <span>
-          바울교회 바울센터 <br />
-          7층 아트홀
-        </span>
-      </div>
+      <div className="location__location">{location}</div>
       <div className="location__time">
-        <span>2019.10.12 오전 11:30</span>
+        <span>{date}</span>
       </div>
       <div className="location__tabs">
         <div
@@ -47,15 +60,9 @@ export const Location = () => {
         </div>
       </div>
       <div className="location__tabs__content">
-        {active === "subway" && (
-          <span>
-            지하철 지하철 지하철 지하철 지하철 지하철
-            <br />
-            지하철 지하철 지하철 지하철 지하철
-          </span>
-        )}
-        {active === "bus" && <span>100번 버스</span>}
-        {active === "car" && <span>자가용</span>}
+        {active === "subway" && subway}
+        {active === "bus" && bus}
+        {active === "car" && car}
       </div>
       <div className="location__map__container">
         <div id="map" className="location__map" />

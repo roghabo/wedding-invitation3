@@ -99,7 +99,26 @@ export const Main = () => {
               Img20,
             ]}
           />
-          <Location />
+          <Location
+            latitude={35.807987}
+            longitude={127.134939}
+            date="2019.10.12 오전 11:30"
+            location={
+              <span>
+                바울교회 바울센터 <br />
+                7층 아트홀
+              </span>
+            }
+            subway={
+              <span>
+                지하철 지하철 지하철 지하철 지하철 지하철
+                <br />
+                지하철 지하철 지하철 지하철 지하철
+              </span>
+            }
+            bus={<span>100번 버스</span>}
+            car={<span>자가용</span>}
+          />
           <Guest
             maleAccounts={[
               "국민 200123-45-678900 정영석",

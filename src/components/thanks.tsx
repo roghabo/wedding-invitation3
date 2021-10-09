@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import thanksImg from "../images/thanks_img.png";
 import share from "../images/share.png";
 
 declare var process: {
@@ -8,7 +7,12 @@ declare var process: {
   };
 };
 
-export const Thanks = () => {
+interface IThanksProps {
+  thanksImg: string;
+  text: any;
+}
+
+export const Thanks: React.FC<IThanksProps> = ({ thanksImg, text }) => {
   useEffect(() => {
     window.Kakao.Link.createCustomButton({
       container: "#kakao-link-btn",
@@ -26,12 +30,7 @@ export const Thanks = () => {
         <div className="thanks__text-container__title">
           <p>Thanks</p>
         </div>
-        <div className="thanks__text-container__content">
-          <p>
-            감사한 마음으로 서로 아끼며 살겠습니다. <br />
-            모든 축하의 마음 감사합니다.
-          </p>
-        </div>
+        <div className="thanks__text-container__content">{text}</div>
         <div className="Kakao">
           <div id="kakao-link-btn" className="thanks__share">
             <img src={share} alt="" />

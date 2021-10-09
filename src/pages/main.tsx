@@ -9,6 +9,7 @@ import { Location } from "../components/location";
 import { Guest } from "../components/guest";
 import { Thanks } from "../components/thanks";
 import mainImg from "../images/mainImg.png";
+import thanksImg from "../images/thanks_img.png";
 
 const override = css`
   display: block;
@@ -43,7 +44,15 @@ export const Main = () => {
           <Gallery />
           <Location />
           <Guest />
-          <Thanks />
+          <Thanks
+            thanksImg={thanksImg}
+            text={
+              <span>
+                감사한 마음으로 서로 아끼며 살겠습니다. <br />
+                모든 축하의 마음 감사합니다.
+              </span>
+            }
+          />
         </div>
       )}
     </>

@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import { GuestList } from "../components/guest_list";
 import { GuestMessage } from "../components/guest_message";
-import MainImg from "../images/guest_main_img.png";
+
 import list from "../images/ic_list_3x.png";
 import message from "../images/ic_message_3x.png";
 
-export const GuestBook = () => {
+interface IGuestBookProps {
+  img: string;
+  name: string;
+  date: string;
+}
+
+export const GuestBook: React.FC<IGuestBookProps> = ({ img, name, date }) => {
   const [menu, setMenu] = useState("message");
   return (
     <div className="wrapper">
       <section className="guest_book">
         <div className="guest_book__main">
-          <img src={MainImg} alt="" />
+          <img src={img} alt="" />
           <div className="guest_book__main__text">
             <span>
-              October 12, 2019 <br />
-              Youngseok x Suji
+              {date} <br />
+              {name}
             </span>
           </div>
         </div>

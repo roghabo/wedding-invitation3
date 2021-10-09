@@ -15,7 +15,7 @@ export const Location = () => {
   return (
     <section className="location">
       <div className="location__title">
-        <p>Location</p>
+        <span>Location</span>
       </div>
       <div className="location__location">
         <span>

@@ -28,7 +28,7 @@ export const Thanks: React.FC<IThanksProps> = ({ thanksImg, text }) => {
       <img className="thanks__img" src={thanksImg} alt="" />
       <div className="thanks__text-container">
         <div className="thanks__text-container__title">
-          <p>Thanks</p>
+          <span>Thanks</span>
         </div>
         <div className="thanks__text-container__content">{text}</div>
         <div className="Kakao">

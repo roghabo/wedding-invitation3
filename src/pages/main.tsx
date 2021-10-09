@@ -10,6 +10,26 @@ import { Guest } from "../components/guest";
 import { Thanks } from "../components/thanks";
 import mainImg from "../images/mainImg.png";
 import thanksImg from "../images/thanks_img.png";
+import Img1 from "../images/gallery/img1.jpeg";
+import Img2 from "../images/gallery/img2.jpeg";
+import Img3 from "../images/gallery/img3.jpeg";
+import Img4 from "../images/gallery/img4.jpeg";
+import Img5 from "../images/gallery/img5.jpeg";
+import Img6 from "../images/gallery/img6.jpeg";
+import Img7 from "../images/gallery/img7.jpeg";
+import Img8 from "../images/gallery/img8.jpeg";
+import Img9 from "../images/gallery/img9.jpeg";
+import Img10 from "../images/gallery/img10.jpeg";
+import Img11 from "../images/gallery/img11.jpeg";
+import Img12 from "../images/gallery/img12.jpeg";
+import Img13 from "../images/gallery/img13.jpeg";
+import Img14 from "../images/gallery/img14.jpeg";
+import Img15 from "../images/gallery/img15.jpeg";
+import Img16 from "../images/gallery/img16.jpeg";
+import Img17 from "../images/gallery/img17.jpeg";
+import Img18 from "../images/gallery/img18.jpeg";
+import Img19 from "../images/gallery/img19.jpeg";
+import Img20 from "../images/gallery/img20.jpeg";
 
 const override = css`
   display: block;
@@ -55,7 +75,30 @@ export const Main = () => {
             groomFamily="정OO·송OO 의 장남 정영석"
             brideFamily="최OO·강OO 의 차녀 최수지"
           />
-          <Gallery />
+          <Gallery
+            photos={[
+              Img1,
+              Img2,
+              Img3,
+              Img4,
+              Img5,
+              Img6,
+              Img7,
+              Img8,
+              Img9,
+              Img10,
+              Img11,
+              Img12,
+              Img13,
+              Img14,
+              Img15,
+              Img16,
+              Img17,
+              Img18,
+              Img19,
+              Img20,
+            ]}
+          />
           <Location />
           <Guest
             maleAccounts={[

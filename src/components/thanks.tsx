@@ -2,11 +2,17 @@ import React, { useEffect } from "react";
 import thanksImg from "../images/thanks_img.png";
 import share from "../images/share.png";
 
+declare var process: {
+  env: {
+    REACT_APP_KAKAO_TEMPLATE_ID: string;
+  };
+};
+
 export const Thanks = () => {
   useEffect(() => {
     window.Kakao.Link.createCustomButton({
       container: "#kakao-link-btn",
-      templateId: 62382,
+      templateId: parseInt(process.env.REACT_APP_KAKAO_TEMPLATE_ID),
       templateArgs: {
         title: "제목 영역입니다.",
         description: "설명 영역입니다.",

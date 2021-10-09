@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Cover } from "../components/cover";
-import { Gallery } from "../components/gallery";
-import { Guest } from "../components/guest";
-import { Introduction } from "../components/introduction";
-import { Location } from "../components/location";
-import { Thanks } from "../components/thanks";
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import { Cover } from "../components/cover";
 import { Image } from "../components/image";
+import { Introduction } from "../components/introduction";
+import { Gallery } from "../components/gallery";
+import { Location } from "../components/location";
+import { Guest } from "../components/guest";
+import { Thanks } from "../components/thanks";
 
 const override = css`
   display: block;
   margin: 0 auto;
 `;
+
 export const Main = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {

@@ -17,7 +17,7 @@ export const Introduction: React.FC<IIntroductionProps> = ({
   const [effectStart, seteffectStart] = useState(false);
   useEffect(() => {
     const setEffect = (e: any) => {
-      if (e.target.scrollTop >= 410) {
+      if (e.target.scrollTop >= 520) {
         seteffectStart(true);
       }
     };

@@ -43,7 +43,16 @@ export const Main = () => {
           <Introduction />
           <Gallery />
           <Location />
-          <Guest />
+          <Guest
+            maleAccounts={[
+              "국민 200123-45-678900 정영석",
+              "국민 200123-45-678900 최수지",
+            ]}
+            femaleAccounts={[
+              "국민 200123-45-678900 최수지",
+              "국민 200123-45-678900 정영석",
+            ]}
+          />
           <Thanks
             thanksImg={thanksImg}
             text={

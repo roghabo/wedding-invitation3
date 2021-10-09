@@ -7,7 +7,7 @@ import arrow from "../images/ic_r_b_3x.png";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../fbase";
 
-const customStyles = {
+const modalStyles = {
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     width: "100%",
@@ -40,7 +40,15 @@ interface ICommentForm {
   message: string;
 }
 
-export const Guest = () => {
+interface IGuestProps {
+  maleAccounts: string[];
+  femaleAccounts: string[];
+}
+
+export const Guest: React.FC<IGuestProps> = ({
+  maleAccounts,
+  femaleAccounts,
+}) => {
   const [moneyModalIsOpen, setMoneyModalIsOpen] = useState(false);
   const [commentModalIsOpen, setCommentModalIsOpen] = useState(false);
   const [attendModalIsOpen, setAttendModalIsOpen] = useState(false);
@@ -147,22 +155,22 @@ export const Guest = () => {
   return (
     <section className="guest">
       <div className="guest__title">
-        <p>Guest book</p>
+        <span>Guest book</span>
       </div>
       <div className="guest__text">
-        <p>저희를 향한 축하의 마음을 전해주세요.</p>
+        <span>저희를 향한 축하의 마음을 전해주세요.</span>
       </div>
       <div className="guest__box" onClick={openAttendModal}>
-        <p>결혼식 참석 명단 작성</p>
+        <span>결혼식 참석 명단 작성</span>
         <img src={arrow} alt="" />
       </div>
 
       <div className="guest__box" onClick={openCommentModal}>
-        <p>축하 메시지 남기기</p>
+        <span>축하 메시지 남기기</span>
         <img src={arrow} alt="" />
       </div>
       <div className="guest__box" onClick={openMoneyModal}>
-        <p>축의금 보내기</p>
+        <span>축의금 보내기</span>
         <img src={arrow} alt="" />
       </div>
       <div>
@@ -170,7 +178,7 @@ export const Guest = () => {
           isOpen={moneyModalIsOpen}
           onAfterOpen={afterOpenMoneyModal}
           onRequestClose={closeMoneyModal}
-          style={customStyles}
+          style={modalStyles}
           contentLabel="Money Modal"
         >
           <div className="guest__modal__title">Gift</div>
@@ -182,27 +190,25 @@ export const Guest = () => {
             <div className="guest__modal__contents__title">
               <span>신랑측 계좌번호</span>
             </div>
-            <div className="guest__modal__contents__text">
-              <CopyToClipboard
-                onCopy={copyAccount}
-                text={"200123-45-678900 정영석"}
-              >
-                <span>국민 200123-45-678900 정영석</span>
-              </CopyToClipboard>
-            </div>
+            {maleAccounts.map((account) => (
+              <div className="guest__modal__contents__text">
+                <CopyToClipboard onCopy={copyAccount} text={account}>
+                  <span>{account}</span>
+                </CopyToClipboard>
+              </div>
+            ))}
           </div>
           <div className="guest__modal__contents">
             <div className="guest__modal__contents__title">
               <span>신부측 계좌번호</span>
             </div>
-            <div className="guest__modal__contents__text">
-              <CopyToClipboard
-                onCopy={copyAccount}
-                text={"200123-45-678900 최수지"}
-              >
-                <span>국민 200123-45-678900 최수지</span>
-              </CopyToClipboard>
-            </div>
+            {femaleAccounts.map((account) => (
+              <div className="guest__modal__contents__text">
+                <CopyToClipboard onCopy={copyAccount} text={account}>
+                  <span>{account}</span>
+                </CopyToClipboard>
+              </div>
+            ))}
           </div>
           <div className="guest__modal__button" onClick={closeMoneyModal}>
             <span>확인</span>
@@ -214,7 +220,7 @@ export const Guest = () => {
           isOpen={commentModalIsOpen}
           onAfterOpen={afterOpenCommentModal}
           onRequestClose={closeCommentModal}
-          style={customStyles}
+          style={modalStyles}
           contentLabel="Comment Modal"
         >
           <div className="guest__modal__title">Message</div>
@@ -314,7 +320,7 @@ export const Guest = () => {
           isOpen={attendModalIsOpen}
           onAfterOpen={afterOpenAttendModal}
           onRequestClose={closeAttendModal}
-          style={customStyles}
+          style={modalStyles}
           contentLabel="Attend Modal"
         >
           <div className="guest__modal__title">Attend</div>

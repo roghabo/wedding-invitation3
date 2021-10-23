@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import groom from "../images/groom.png";
-import bride from "../images/bride.png";
 
-export const Image = () => {
+interface IIntroductionProps {
+  groomImg: string;
+  brideImg: string;
+}
+
+export const Image: React.FC<IIntroductionProps> = ({ groomImg, brideImg }) => {
   const [groomScale, setGroomScale] = useState(1);
   const [brideScale, setBrideScale] = useState(1);
   useEffect(() => {
@@ -23,7 +26,7 @@ export const Image = () => {
       <div className="image__container">
         <div className="image__container__image">
           <img
-            src={groom}
+            src={groomImg}
             alt=""
             style={{ transform: `scale(${groomScale}, ${groomScale})` }}
           />
@@ -31,7 +34,7 @@ export const Image = () => {
         <div className="image__container__image">
           <img
             className="image__bride"
-            src={bride}
+            src={brideImg}
             alt=""
             style={{ transform: `scale(${brideScale}, ${brideScale})` }}
           />

@@ -23,7 +23,7 @@ export const Location: React.FC<IProjectProps> = ({
   useEffect(() => {
     const map = new naver.maps.Map("map", {
       center: new naver.maps.LatLng(latitude, longitude),
-      zoom: 17,
+      zoom: 20,
     });
     new naver.maps.Marker({
       position: new naver.maps.LatLng(latitude, longitude),
@@ -71,7 +71,7 @@ export const Location: React.FC<IProjectProps> = ({
         className="location__map-btn"
         onClick={() =>
           window.open(
-            "https://m.map.naver.com/map.naver?lat=35.807987&lng=127.134939&dlevel=&mapMode=&pinTitle=%EB%B0%94%EC%9A%B8%EA%B5%90%ED%9A%8C&boundary=&traffic=",
+            `https://m.map.naver.com/map.naver?lat=${latitude}&lng=${longitude}&dlevel=&mapMode=&pinTitle=아펠가모%20광화문&boundary=&traffic=`,
             "_blank"
           )
         }

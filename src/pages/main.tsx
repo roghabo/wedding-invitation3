@@ -30,6 +30,8 @@ import Img17 from "../images/gallery/img17.jpeg";
 import Img18 from "../images/gallery/img18.jpeg";
 import Img19 from "../images/gallery/img19.jpeg";
 import Img20 from "../images/gallery/img20.jpeg";
+import groom from "../images/groom.png";
+import bride from "../images/bride.png";
 
 const override = css`
   display: block;
@@ -54,26 +56,25 @@ export const Main = () => {
       ) : (
         <div className="wrapper">
           <Cover
-            date="2019.10.12"
-            location="바울교회 바울센터 7층 아트홀, AM 11:30"
-            name="Jung youngseok x Choi Suji"
+            date="2021.11.27"
+            location="아펠가모 광화문 LL층, PM 3:30"
+            name="Oh Hyeonmyeong x Seo Jooeun"
             mainImg={mainImg}
           />
-          <Image />
+          <Image groomImg={groom} brideImg={bride} />
           <Introduction
-            name="안녕하세요. <br /> 정영석, 최수지입니다."
+            name="안녕하세요. <br /> 오현명, 서주은입니다."
             text={
               <span>
-                서로가 마주 보며 다져온 사랑을 <br />
-                이제 함께 한 곳을 바라보며 걸어갈 수 있는 <br />
-                큰 사랑으로 키우고자 합니다. <br />
-                저희 두 사람이 <br />
-                사랑의 이름으로 지켜나갈 수 있게 <br />
-                앞날을 축복해 주시면 감사하겠습니다.
+                저희 두 사람이 사랑과 믿음으로 <br />
+                한 가정을 이루게 되었습니다. <br />
+                오셔서 저희의 앞날을 <br />
+                축복해주시고 <br />
+                격려해주시면 더없는 기쁨이 되겠습니다.
               </span>
             }
-            groomFamily="정OO·송OO 의 장남 정영석"
-            brideFamily="최OO·강OO 의 차녀 최수지"
+            groomFamily="오창록·윤숙경 의 장남 현명"
+            brideFamily="서종욱·주화숙 의 장녀 주은"
           />
           <Gallery
             photos={[
@@ -100,33 +101,46 @@ export const Main = () => {
             ]}
           />
           <Location
-            latitude={35.807987}
-            longitude={127.134939}
-            date="2019.10.12 오전 11:30"
+            latitude={37.574848}
+            longitude={126.978994}
+            date="2021.11.27 오후 3:30"
             location={
               <span>
-                바울교회 바울센터 <br />
-                7층 아트홀
+                아펠가모 광화문 <br />
+                LL층
               </span>
             }
             subway={
               <span>
-                지하철 지하철 지하철 지하철 지하철 지하철
+                [광화문역(5호선)] 2번 출구 방향으로 나와 경복궁 방면으로 직진후
+                역사박물관에서 우회전후, 사거리에서 좌측 대각선 첫번째 건물
                 <br />
-                지하철 지하철 지하철 지하철 지하철
+                [경복궁역(3호선)] 6번 출구 방향으로 나와 광화문 삼거리 건넌 후
+                열린시민마당 건너편 건물
               </span>
             }
-            bus={<span>100번 버스</span>}
+            bus={
+              <span>
+                [간선(파랑)] 103, 109, 150, 171, 272, 401, 402(심야), 406, 408,
+                606, 607, 700, 704, 706, 707, 708
+                <br />
+                [지선(초록)] 1020, 1711, 7016, 7018, 7022, 7212, 7025
+                <br />
+                [마을버스] 종로 09, 종로 11
+                <br />* 세종문화회관, KT광화문지사, 경복궁 정류장 하차 더 케이
+                트윈타워 LL층
+              </span>
+            }
             car={<span>자가용</span>}
           />
           <Guest
             maleAccounts={[
-              "국민 200123-45-678900 정영석",
-              "국민 200123-45-678900 최수지",
+              "신한 605-02-117249 오창록",
+              "우리 1002-180-296587 오현명",
             ]}
             femaleAccounts={[
-              "국민 200123-45-678900 최수지",
-              "국민 200123-45-678900 정영석",
+              "신한 110-373-659490 서종욱",
+              "우리 1002-446-237027 서주은",
             ]}
           />
           <Thanks

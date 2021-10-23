@@ -8,7 +8,7 @@ import { Gallery } from "../components/gallery";
 import { Location } from "../components/location";
 import { Guest } from "../components/guest";
 import { Thanks } from "../components/thanks";
-import mainImg from "../images/mainImg.png";
+import mainImg from "../images/mainImg.jpg";
 import thanksImg from "../images/thanks_img.png";
 import Img1 from "../images/gallery/img1.jpeg";
 import Img2 from "../images/gallery/img2.jpeg";

@@ -15,8 +15,8 @@ export const MainRouter = () => {
         <Route path={`/${process.env.REACT_APP_PATH}`} exact>
           <GuestBook
             img={GuestBookImg}
-            date="October 12, 2019"
-            name="Youngseok x Suji"
+            date="November 27, 2021"
+            name="Hyeonmyeong x Jooeun"
           />
         </Route>
         <Route>

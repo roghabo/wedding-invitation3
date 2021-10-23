@@ -30,8 +30,8 @@ import Img17 from "../images/gallery/img17.jpeg";
 import Img18 from "../images/gallery/img18.jpeg";
 import Img19 from "../images/gallery/img19.jpeg";
 import Img20 from "../images/gallery/img20.jpeg";
-import groom from "../images/groom.png";
-import bride from "../images/bride.png";
+import groom from "../images/groom.jpg";
+import bride from "../images/bride.jpg";
 
 const override = css`
   display: block;
@@ -42,7 +42,12 @@ export const Main = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-    setLoading(false);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout();
   }, [setLoading]);
   return (
     <>

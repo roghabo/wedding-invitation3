@@ -73,8 +73,8 @@ export const Main = () => {
                 격려해주시면 더없는 기쁨이 되겠습니다.
               </span>
             }
-            groomFamily="오창록·윤숙경 의 장남 현명"
-            brideFamily="서종욱·주화숙 의 장녀 주은"
+            groomFamily="오창록·윤숙경 의 장남 오현명"
+            brideFamily="서종욱·주화숙 의 장녀 서주은"
           />
           <Gallery
             photos={[

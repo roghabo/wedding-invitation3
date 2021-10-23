@@ -18,7 +18,7 @@ export const Cover: React.FC<ICoverProps> = ({
 
   useEffect(() => {
     const scrollEvent = (e: any) => {
-      if (e.target.scrollTop <= 38 * 5) {
+      if (e.target.scrollTop <= 42 * 5) {
         setScrollTop(y + e.target.scrollTop / 5);
       }
     };

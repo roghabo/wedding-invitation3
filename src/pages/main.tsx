@@ -42,11 +42,9 @@ export const Main = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
-
+    }, 3000);
     return () => clearTimeout();
   }, [setLoading]);
   return (

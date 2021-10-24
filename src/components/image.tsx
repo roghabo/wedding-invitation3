@@ -12,10 +12,10 @@ export const Image: React.FC<IIntroductionProps> = ({ groomImg, brideImg }) => {
     const scrollEvent = (e: any) => {
       console.log(e.target.scrollTop);
       if (e.target.scrollTop > 10 && e.target.scrollTop <= 326) {
-        setGroomScale(1 + e.target.scrollTop / 3160);
+        setGroomScale(1 + e.target.scrollTop / 2160);
       }
       if (e.target.scrollTop > 50 && e.target.scrollTop <= 366) {
-        setBrideScale(1 + e.target.scrollTop / 3160);
+        setBrideScale(1 + e.target.scrollTop / 2160);
       }
     };
     window.addEventListener("scroll", scrollEvent, true);

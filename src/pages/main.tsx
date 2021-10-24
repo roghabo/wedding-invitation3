@@ -9,7 +9,7 @@ import { Location } from "../components/location";
 import { Guest } from "../components/guest";
 import { Thanks } from "../components/thanks";
 import mainImg from "../images/mainImg.jpg";
-import thanksImg from "../images/thanks_img.png";
+import thanksImg from "../images/thanksImg.jpg";
 import Img1 from "../images/gallery/img1.jpeg";
 import Img2 from "../images/gallery/img2.jpeg";
 import Img3 from "../images/gallery/img3.jpeg";

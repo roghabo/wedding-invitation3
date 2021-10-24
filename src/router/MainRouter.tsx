@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NotFound } from "../pages/404";
 import { GuestBook } from "../pages/guestBook";
 import { Main } from "../pages/main";
-import GuestBookImg from "../images/guest_main_img.png";
+import GuestBookImg from "../images/guestbook_img.jpg";
 
 export const MainRouter = () => {
   return (

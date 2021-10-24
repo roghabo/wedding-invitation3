@@ -10,26 +10,26 @@ import { Guest } from "../components/guest";
 import { Thanks } from "../components/thanks";
 import mainImg from "../images/mainImg.jpg";
 import thanksImg from "../images/thanksImg.jpg";
-import Img1 from "../images/gallery/img1.jpeg";
-import Img2 from "../images/gallery/img2.jpeg";
-import Img3 from "../images/gallery/img3.jpeg";
-import Img4 from "../images/gallery/img4.jpeg";
-import Img5 from "../images/gallery/img5.jpeg";
-import Img6 from "../images/gallery/img6.jpeg";
-import Img7 from "../images/gallery/img7.jpeg";
-import Img8 from "../images/gallery/img8.jpeg";
-import Img9 from "../images/gallery/img9.jpeg";
-import Img10 from "../images/gallery/img10.jpeg";
-import Img11 from "../images/gallery/img11.jpeg";
-import Img12 from "../images/gallery/img12.jpeg";
-import Img13 from "../images/gallery/img13.jpeg";
-import Img14 from "../images/gallery/img14.jpeg";
-import Img15 from "../images/gallery/img15.jpeg";
-import Img16 from "../images/gallery/img16.jpeg";
-import Img17 from "../images/gallery/img17.jpeg";
-import Img18 from "../images/gallery/img18.jpeg";
-import Img19 from "../images/gallery/img19.jpeg";
-import Img20 from "../images/gallery/img20.jpeg";
+import Img1 from "../images/gallery/img1.jpg";
+import Img2 from "../images/gallery/img2.jpg";
+import Img3 from "../images/gallery/img3.jpg";
+import Img4 from "../images/gallery/img4.jpg";
+import Img5 from "../images/gallery/img5.jpg";
+import Img6 from "../images/gallery/img6.jpg";
+import Img7 from "../images/gallery/img7.jpg";
+import Img8 from "../images/gallery/img8.jpg";
+import Img9 from "../images/gallery/img9.jpg";
+import Img10 from "../images/gallery/img10.jpg";
+// import Img11 from "../images/gallery/img11.jpg";
+// import Img12 from "../images/gallery/img12.jpg";
+// import Img13 from "../images/gallery/img13.jpg";
+// import Img14 from "../images/gallery/img14.jpg";
+// import Img15 from "../images/gallery/img15.jpg";
+// import Img16 from "../images/gallery/img16.jpg";
+// import Img17 from "../images/gallery/img17.jpg";
+// import Img18 from "../images/gallery/img18.jpg";
+// import Img19 from "../images/gallery/img19.jpg";
+// import Img20 from "../images/gallery/img20.jpg";
 import groom from "../images/groom.jpg";
 import bride from "../images/bride.jpg";
 
@@ -91,16 +91,16 @@ export const Main = () => {
               Img8,
               Img9,
               Img10,
-              Img11,
-              Img12,
-              Img13,
-              Img14,
-              Img15,
-              Img16,
-              Img17,
-              Img18,
-              Img19,
-              Img20,
+              // Img11,
+              // Img12,
+              // Img13,
+              // Img14,
+              // Img15,
+              // Img16,
+              // Img17,
+              // Img18,
+              // Img19,
+              // Img20,
             ]}
           />
           <Location

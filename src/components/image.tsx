@@ -10,7 +10,6 @@ export const Image: React.FC<IIntroductionProps> = ({ groomImg, brideImg }) => {
   const [brideScale, setBrideScale] = useState(1);
   useEffect(() => {
     const scrollEvent = (e: any) => {
-      console.log(e.target.scrollTop);
       if (e.target.scrollTop > 10 && e.target.scrollTop <= 326) {
         setGroomScale(1 + e.target.scrollTop / 2160);
       }

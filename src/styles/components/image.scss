@@ -11,12 +11,12 @@
       object-fit: cover;
       object-position: center;
       width: 100%;
+      &:last-child {
+        margin-top: 70px;
+      }
     }
     img {
       width: 100%;
     }
-  }
-  &__bride {
-    margin-top: 70px;
   }
 }

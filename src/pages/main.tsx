@@ -20,16 +20,12 @@ import Img7 from "../images/gallery/img7.jpg";
 import Img8 from "../images/gallery/img8.jpg";
 import Img9 from "../images/gallery/img9.jpg";
 import Img10 from "../images/gallery/img10.jpg";
-// import Img11 from "../images/gallery/img11.jpg";
-// import Img12 from "../images/gallery/img12.jpg";
-// import Img13 from "../images/gallery/img13.jpg";
-// import Img14 from "../images/gallery/img14.jpg";
-// import Img15 from "../images/gallery/img15.jpg";
-// import Img16 from "../images/gallery/img16.jpg";
-// import Img17 from "../images/gallery/img17.jpg";
-// import Img18 from "../images/gallery/img18.jpg";
-// import Img19 from "../images/gallery/img19.jpg";
-// import Img20 from "../images/gallery/img20.jpg";
+import Img11 from "../images/gallery/img11.jpg";
+import Img12 from "../images/gallery/img12.jpg";
+import Img13 from "../images/gallery/img13.jpg";
+import Img14 from "../images/gallery/img14.jpg";
+import Img15 from "../images/gallery/img15.jpg";
+import Img16 from "../images/gallery/img16.jpg";
 import groom from "../images/groom.jpg";
 import bride from "../images/bride.jpg";
 
@@ -91,16 +87,12 @@ export const Main = () => {
               Img8,
               Img9,
               Img10,
-              // Img11,
-              // Img12,
-              // Img13,
-              // Img14,
-              // Img15,
-              // Img16,
-              // Img17,
-              // Img18,
-              // Img19,
-              // Img20,
+              Img11,
+              Img12,
+              Img13,
+              Img14,
+              Img15,
+              Img16,
             ]}
           />
           <Location

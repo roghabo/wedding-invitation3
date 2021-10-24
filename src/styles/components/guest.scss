@@ -1,6 +1,6 @@
 .guest {
   @extend %padding;
-  margin-bottom: 125px;
+  margin-bottom: 128px;
   &__title {
     @extend %title;
     margin-top: 136px;
@@ -19,7 +19,7 @@
     align-items: center;
     padding: 12px 0px;
     border-bottom: 1px solid #1a1a1a;
-    margin-bottom: 11px;
+    margin-bottom: 8px;
     font-weight: 600;
     font-size: 18px;
     img {

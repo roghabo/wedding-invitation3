@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface IIntroductionProps {
   groomImg: string;
@@ -6,37 +6,14 @@ interface IIntroductionProps {
 }
 
 export const Image: React.FC<IIntroductionProps> = ({ groomImg, brideImg }) => {
-  const [groomScale, setGroomScale] = useState(1);
-  const [brideScale, setBrideScale] = useState(1);
-  useEffect(() => {
-    const scrollEvent = (e: any) => {
-      if (e.target.scrollTop > 10 && e.target.scrollTop <= 326) {
-        setGroomScale(1 + e.target.scrollTop / 2160);
-      }
-      if (e.target.scrollTop > 50 && e.target.scrollTop <= 366) {
-        setBrideScale(1 + e.target.scrollTop / 2160);
-      }
-    };
-    window.addEventListener("scroll", scrollEvent, true);
-    return () => window.removeEventListener("scroll", scrollEvent, true);
-  }, []);
   return (
     <section className="image">
       <div className="image__container">
         <div className="image__container__image">
-          <img
-            src={groomImg}
-            alt=""
-            style={{ transform: `scale(${groomScale}, ${groomScale})` }}
-          />
+          <img src={groomImg} alt="" />
         </div>
         <div className="image__container__image">
-          <img
-            className="image__bride"
-            src={brideImg}
-            alt=""
-            style={{ transform: `scale(${brideScale}, ${brideScale})` }}
-          />
+          <img src={brideImg} alt="" />
         </div>
       </div>
     </section>

@@ -14,7 +14,7 @@ Swiper.use([Navigation, Pagination]);
 export const Gallery: React.FC<IGalleryProps> = ({ photos }) => {
   useEffect(() => {
     new Swiper(".swiper-container", {
-      speed: 700,
+      speed: 800,
       spaceBetween: 10,
       pagination: {
         el: ".swiper-pagination",

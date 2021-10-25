@@ -43,9 +43,6 @@ export const Main = () => {
       setLoading(true);
     };
     img.src = mainImg;
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 3000);
     return () => clearTimeout();
   }, [setLoading]);
   return (

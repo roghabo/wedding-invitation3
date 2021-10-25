@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { Cover } from "../components/cover";
-import { Image } from "../components/image";
+import { Images } from "../components/image";
 import { Introduction } from "../components/introduction";
 import { Gallery } from "../components/gallery";
 import { Location } from "../components/location";
@@ -35,17 +35,22 @@ const override = css`
 `;
 
 export const Main = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+    const img = new Image();
+    img.onload = () => {
+      setLoading(true);
+    };
+    img.src = mainImg;
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 3000);
     return () => clearTimeout();
   }, [setLoading]);
   return (
     <>
-      {loading ? (
+      {!loading ? (
         <PropagateLoader
           color={"#1a1a1a"}
           loading={true}
@@ -58,9 +63,11 @@ export const Main = () => {
             date="2021.11.27"
             location="아펠가모 광화문 LL층, PM 3:30"
             name="Oh Hyeonmyeong x Seo Jooeun"
-            mainImg={mainImg}
+            mainImg={
+              <img src={mainImg} alt="" onLoad={() => setLoading(true)} />
+            }
           />
-          <Image groomImg={groom} brideImg={bride} />
+          <Images groomImg={groom} brideImg={bride} />
           <Introduction
             name="안녕하세요. <br /> 오현명, 서주은입니다."
             text={

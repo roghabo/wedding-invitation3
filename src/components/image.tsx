@@ -5,7 +5,10 @@ interface IIntroductionProps {
   brideImg: string;
 }
 
-export const Image: React.FC<IIntroductionProps> = ({ groomImg, brideImg }) => {
+export const Images: React.FC<IIntroductionProps> = ({
+  groomImg,
+  brideImg,
+}) => {
   return (
     <section className="image">
       <div className="image__container">

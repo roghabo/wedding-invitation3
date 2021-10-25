@@ -4,7 +4,7 @@ interface ICoverProps {
   date: string;
   location: string;
   name: string;
-  mainImg: string;
+  mainImg: any;
 }
 
 export const Cover: React.FC<ICoverProps> = ({
@@ -15,13 +15,8 @@ export const Cover: React.FC<ICoverProps> = ({
 }) => {
   let y = 0;
   const [scrollTop, setScrollTop] = useState(0);
-  const [imageLoad, setImageLoad] = useState(false);
+
   useEffect(() => {
-    const img = new Image();
-    img.onload = () => {
-      setImageLoad(true);
-    };
-    img.src = mainImg;
     const scrollEvent = (e: any) => {
       if (e.target.scrollTop <= 42 * 5) {
         setScrollTop(y + e.target.scrollTop / 5);
@@ -29,32 +24,29 @@ export const Cover: React.FC<ICoverProps> = ({
     };
     window.addEventListener("scroll", scrollEvent, true);
     return () => window.removeEventListener("scroll", scrollEvent, true);
-  }, [y, mainImg]);
+  }, [y]);
 
   return (
-    <>
-      {imageLoad && (
-        <section className="cover">
-          <div className="cover__img-container">
-            <img src={mainImg} alt="" onLoad={() => setImageLoad(true)} />
-          </div>
-          <div
-            className="cover__container"
-            style={{ transform: `translateY(-${scrollTop}px)` }}
-          >
-            <div className="cover__title">
-              <span>{date}</span>
-            </div>
-            <div className="cover__location">
-              <span>
-                {location}
-                <br />
-                {name}
-              </span>
-            </div>
-          </div>
-        </section>
-      )}
-    </>
+    <section className="cover">
+      <div className="cover__img-container">
+        {/* <img src={mainImg} alt="" /> */}
+        {mainImg}
+      </div>
+      <div
+        className="cover__container"
+        style={{ transform: `translateY(-${scrollTop}px)` }}
+      >
+        <div className="cover__title">
+          <span>{date}</span>
+        </div>
+        <div className="cover__location">
+          <span>
+            {location}
+            <br />
+            {name}
+          </span>
+        </div>
+      </div>
+    </section>
   );
 };

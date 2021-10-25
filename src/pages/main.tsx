@@ -101,8 +101,8 @@ export const Main = () => {
             date="2021.11.27 오후 3:30"
             location={
               <span>
-                아펠가모 광화문 <br />
-                LL층
+                아펠가모 광화문 LL층 <br />
+                서울 종로구 종로 1길 50
               </span>
             }
             subway={
@@ -126,16 +126,15 @@ export const Main = () => {
                 트윈타워 LL층
               </span>
             }
-            car={<span>자가용</span>}
           />
           <Guest
             maleAccounts={[
-              "신한 605-02-117249 오창록",
-              "우리 1002-180-296587 오현명",
+              { name: "오창록", account: "신한 605-02-117249 오창록" },
+              { name: "오현명", account: "우리 1002-180-296587 오현명" },
             ]}
             femaleAccounts={[
-              "신한 110-373-659490 서종욱",
-              "우리 1002-446-237027 서주은",
+              { name: "서종욱", account: "신한 110-373-659490 서종욱" },
+              { name: "서주은", account: "우리 1002-446-237027 서주은" },
             ]}
           />
           <Thanks

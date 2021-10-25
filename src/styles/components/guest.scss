@@ -28,6 +28,14 @@
     }
   }
   &__modal {
+    &__x_icon {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
     &__title {
       @extend %title;
       margin-bottom: 12px;
@@ -54,7 +62,7 @@
         font-size: 16px;
         line-height: 112%;
         cursor: pointer;
-        margin-bottom: 5px;
+        margin-bottom: 7px;
         &:last-child {
           margin-bottom: 0px;
         }
@@ -74,6 +82,7 @@
         width: 100%;
         border: none;
         border-bottom: 1px solid #1a1a1a;
+        padding: 0px;
         padding-bottom: 12px;
         border-radius: 0;
         font-size: 14px;

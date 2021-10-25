@@ -7,7 +7,6 @@ interface IProjectProps {
   location: any;
   subway: any;
   bus: any;
-  car: any;
 }
 
 export const Location: React.FC<IProjectProps> = ({
@@ -17,7 +16,6 @@ export const Location: React.FC<IProjectProps> = ({
   location,
   subway,
   bus,
-  car,
 }) => {
   const [active, setActive] = useState("subway");
   useEffect(() => {
@@ -52,17 +50,10 @@ export const Location: React.FC<IProjectProps> = ({
         >
           <span>버스</span>
         </div>
-        <div
-          className={`location__tabs__tab ${active === "car" && "active"}`}
-          onClick={() => setActive("car")}
-        >
-          <span>자가용</span>
-        </div>
       </div>
       <div className="location__tabs__content">
         {active === "subway" && subway}
         {active === "bus" && bus}
-        {active === "car" && car}
       </div>
       <div className="location__map__container">
         <div id="map" className="location__map" />

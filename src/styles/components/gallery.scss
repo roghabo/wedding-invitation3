@@ -76,3 +76,13 @@
 .swiper-button-disabled {
   opacity: 0.1;
 }
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 42px;
+  font-family: "Cormorant Infant", serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+}

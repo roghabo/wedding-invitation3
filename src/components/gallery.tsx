@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Swiper, { Navigation } from "swiper";
+import Swiper, { Navigation, Pagination } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/swiper-bundle";
 import leftArrow from "../images/ic_l_b_3x.png";
@@ -9,13 +9,17 @@ interface IGalleryProps {
   photos: string[];
 }
 
-Swiper.use([Navigation]);
+Swiper.use([Navigation, Pagination]);
 
 export const Gallery: React.FC<IGalleryProps> = ({ photos }) => {
   useEffect(() => {
     new Swiper(".swiper-container", {
       speed: 700,
       spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -44,6 +48,7 @@ export const Gallery: React.FC<IGalleryProps> = ({ photos }) => {
           <div className="swiper-button-next">
             <img src={rightArrow} alt="rightArrow" />
           </div>
+          <div className="swiper-pagination"></div>
         </div>
       </div>
     </section>

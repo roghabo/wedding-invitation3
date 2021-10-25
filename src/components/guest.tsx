@@ -4,6 +4,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import TextareaAutosize from "react-textarea-autosize";
 import { useForm, SubmitHandler } from "react-hook-form";
 import arrow from "../images/ic_r_b_3x.png";
+import iconX from "../images/ic_x_3x.png";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../fbase";
 
@@ -41,8 +42,8 @@ interface ICommentForm {
 }
 
 interface IGuestProps {
-  maleAccounts: string[];
-  femaleAccounts: string[];
+  maleAccounts: { name: string; account: string }[];
+  femaleAccounts: { name: string; account: string }[];
 }
 
 export const Guest: React.FC<IGuestProps> = ({
@@ -146,8 +147,8 @@ export const Guest: React.FC<IGuestProps> = ({
     setAttendModalIsOpen(false);
   }
 
-  const copyAccount = () => {
-    alert("계좌번호가 복사되었습니다.");
+  const copyAccount = (name: String) => {
+    alert(`${name}님의 계좌번호가 복사되었습니다.`);
   };
   useEffect(() => {
     Modal.setAppElement("body");
@@ -181,6 +182,12 @@ export const Guest: React.FC<IGuestProps> = ({
           style={modalStyles}
           contentLabel="Money Modal"
         >
+          <img
+            className="guest__modal__x_icon"
+            src={iconX}
+            onClick={closeMoneyModal}
+            alt=""
+          />
           <div className="guest__modal__title">Gift</div>
           <div className="guest__modal__coment">
             보내주시는 축의금 감사한 마음으로 받겠습니다. <br />
@@ -192,8 +199,11 @@ export const Guest: React.FC<IGuestProps> = ({
             </div>
             {maleAccounts.map((account, index) => (
               <div className="guest__modal__contents__text" key={index}>
-                <CopyToClipboard onCopy={copyAccount} text={account}>
-                  <span>{account}</span>
+                <CopyToClipboard
+                  onCopy={() => copyAccount(account.name)}
+                  text={account.account}
+                >
+                  <span>{account.account}</span>
                 </CopyToClipboard>
               </div>
             ))}
@@ -204,8 +214,11 @@ export const Guest: React.FC<IGuestProps> = ({
             </div>
             {femaleAccounts.map((account, index) => (
               <div className="guest__modal__contents__text" key={index}>
-                <CopyToClipboard onCopy={copyAccount} text={account}>
-                  <span>{account}</span>
+                <CopyToClipboard
+                  onCopy={() => copyAccount(account.name)}
+                  text={account.account}
+                >
+                  <span>{account.account}</span>
                 </CopyToClipboard>
               </div>
             ))}
@@ -223,6 +236,12 @@ export const Guest: React.FC<IGuestProps> = ({
           style={modalStyles}
           contentLabel="Comment Modal"
         >
+          <img
+            className="guest__modal__x_icon"
+            src={iconX}
+            onClick={closeCommentModal}
+            alt=""
+          />
           <div className="guest__modal__title">Message</div>
           <div className="guest__modal__coment">
             저희 부부에게만 보여지는 메세지입니다.
@@ -323,6 +342,12 @@ export const Guest: React.FC<IGuestProps> = ({
           style={modalStyles}
           contentLabel="Attend Modal"
         >
+          <img
+            className="guest__modal__x_icon"
+            src={iconX}
+            onClick={closeAttendModal}
+            alt=""
+          />
           <div className="guest__modal__title">Attend</div>
           <div className="guest__modal__coment">
             결혼식에 참석하실 경우 아래 내용을 작성해주세요.

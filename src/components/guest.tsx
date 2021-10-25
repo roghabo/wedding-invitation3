@@ -90,7 +90,7 @@ export const Guest: React.FC<IGuestProps> = ({
       });
       console.log("Document written with ID: ", docRef.id);
       closeAttendModal();
-      alert("전송되었습니다.");
+      alert("명단이 작성되었습니다.");
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -111,7 +111,7 @@ export const Guest: React.FC<IGuestProps> = ({
       });
       console.log("Document written with ID: ", docRef.id);
       closeCommentModal();
-      alert("방명록이 작성되었습니다.");
+      alert("마음이 전달되었습니다.");
     } catch (e) {
       console.error("Error adding document: ", e);
     }

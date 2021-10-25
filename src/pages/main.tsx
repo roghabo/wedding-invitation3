@@ -40,7 +40,7 @@ export const Main = () => {
     window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2500);
     return () => clearTimeout();
   }, [setLoading]);
   return (

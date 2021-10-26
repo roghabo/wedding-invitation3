@@ -11,9 +11,7 @@ import { Thanks } from "../components/thanks";
 import mainImg from "../images/kakaoMain.jpg";
 import thanksImg from "../images/thanksImg.jpg";
 import Img1 from "../images/gallery/img1.jpg";
-import Img2 from "../images/gallery/img2.jpg";
 import Img3 from "../images/gallery/img3.jpg";
-import Img4 from "../images/gallery/img4.jpg";
 import Img5 from "../images/gallery/img5.jpg";
 import Img6 from "../images/gallery/img6.jpg";
 import Img7 from "../images/gallery/img7.jpg";
@@ -82,21 +80,19 @@ export const Main = () => {
           <Gallery
             photos={[
               Img1,
-              Img2,
               Img3,
-              Img4,
-              Img5,
+              Img9,
+              Img10,
               Img6,
               Img7,
               Img8,
-              Img9,
-              Img10,
               Img11,
               Img12,
-              Img13,
               Img14,
               Img15,
+              Img5,
               Img16,
+              Img13,
             ]}
           />
           <Location

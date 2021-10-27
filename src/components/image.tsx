@@ -1,8 +1,8 @@
 import React from "react";
 
 interface IIntroductionProps {
-  groomImg: string;
-  brideImg: string;
+  groomImg: any;
+  brideImg: any;
 }
 
 export const Images: React.FC<IIntroductionProps> = ({
@@ -12,12 +12,8 @@ export const Images: React.FC<IIntroductionProps> = ({
   return (
     <section className="image">
       <div className="image__container">
-        <div className="image__container__image">
-          <img src={groomImg} alt="" />
-        </div>
-        <div className="image__container__image">
-          <img src={brideImg} alt="" />
-        </div>
+        <div className="image__container__image">{groomImg}</div>
+        <div className="image__container__image">{brideImg}</div>
       </div>
     </section>
   );

@@ -34,19 +34,31 @@ const override = css`
 `;
 
 export const Main = () => {
-  const [loading, setLoading] = useState(false);
+  const [mainImgLoading, setMainImgLoading] = useState(false);
+  const [brideImgLoading, setBrideImgLoading] = useState(false);
+  const [groomImgLoading, setGroomImgLoading] = useState(false);
   useEffect(() => {
     window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
     const img = new Image();
     img.onload = () => {
-      setLoading(true);
+      setMainImgLoading(true);
     };
     img.src = mainImg;
+    const brideImg = new Image();
+    brideImg.onload = () => {
+      setBrideImgLoading(true);
+    };
+    brideImg.src = bride;
+    const groomImg = new Image();
+    groomImg.onload = () => {
+      setGroomImgLoading(true);
+    };
+    groomImg.src = groom;
     return () => clearTimeout();
-  }, [setLoading]);
+  }, [setMainImgLoading]);
   return (
     <>
-      {!loading ? (
+      {!mainImgLoading && !brideImgLoading && !groomImgLoading ? (
         <PropagateLoader
           color={"#1a1a1a"}
           loading={true}
@@ -60,10 +72,21 @@ export const Main = () => {
             location="아펠가모 광화문 LL층, PM 3:30"
             name="Oh Hyeonmyeong x Seo Jooeun"
             mainImg={
-              <img src={mainImg} alt="" onLoad={() => setLoading(true)} />
+              <img
+                src={mainImg}
+                alt=""
+                onLoad={() => setMainImgLoading(true)}
+              />
             }
           />
-          <Images groomImg={groom} brideImg={bride} />
+          <Images
+            groomImg={
+              <img src={groom} alt="" onLoad={() => setGroomImgLoading(true)} />
+            }
+            brideImg={
+              <img src={bride} alt="" onLoad={() => setBrideImgLoading(true)} />
+            }
+          />
           <Introduction
             name="안녕하세요. <br /> 오현명, 서주은입니다."
             text={

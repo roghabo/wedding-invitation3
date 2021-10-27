@@ -24,6 +24,7 @@ import Img13 from "../images/gallery/img13.jpg";
 import Img14 from "../images/gallery/img14.jpg";
 import Img15 from "../images/gallery/img15.jpg";
 import Img16 from "../images/gallery/img16.jpg";
+import Img17 from "../images/gallery/img17.jpeg";
 import groom from "../images/groom.jpg";
 import bride from "../images/bride.jpg";
 
@@ -85,6 +86,7 @@ export const Main = () => {
               Img10,
               Img6,
               Img7,
+              Img17,
               Img8,
               Img11,
               Img12,
@@ -106,25 +108,75 @@ export const Main = () => {
               </span>
             }
             subway={
-              <span>
-                [광화문역(5호선)] 2번 출구 방향으로 나와 경복궁 방면으로 직진후
-                역사박물관에서 우회전후, 사거리에서 좌측 대각선 첫번째 건물
-                <br />
-                [경복궁역(3호선)] 6번 출구 방향으로 나와 광화문 삼거리 건넌 후
-                열린시민마당 건너편 건물
-              </span>
+              <>
+                <div className="location__tabs__content__subway">
+                  <div className="location__tabs__content__subway__container">
+                    <div className="location__tabs__content__subway__title">
+                      <span>광화문역</span>
+                    </div>
+                    <div className="location__tabs__content__subway__num n5">
+                      <span>5</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span>
+                      2번 출구에서 경복궁 방면으로 직진 후 역사박물관에서
+                      우회전후, 사거리에서 좌측 대각선 첫번째 건물
+                    </span>
+                  </div>
+                </div>
+                <div className="location__tabs__content__subway">
+                  <div className="location__tabs__content__subway__container">
+                    <div className="location__tabs__content__subway__title">
+                      <span>경복궁역</span>
+                    </div>
+                    <div className="location__tabs__content__subway__num n3">
+                      <span>3</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span>
+                      6번 출구에서 광화문 삼거리 건넌 후 열린시민마당 건너편
+                      건물
+                    </span>
+                  </div>
+                </div>
+              </>
             }
             bus={
-              <span>
-                [간선(파랑)] 103, 109, 150, 171, 272, 401, 402(심야), 406, 408,
-                606, 607, 700, 704, 706, 707, 708
-                <br />
-                [지선(초록)] 1020, 1711, 7016, 7018, 7022, 7212, 7025
-                <br />
-                [마을버스] 종로 09, 종로 11
-                <br />* 세종문화회관, KT광화문지사, 경복궁 정류장 하차 더 케이
-                트윈타워 LL층
-              </span>
+              <>
+                <div className="location__tabs__content__bus">
+                  <div className="location__tabs__content__bus__title blue">
+                    간선
+                  </div>
+                  <div>
+                    <span>
+                      103, 109, 150, 171, 272, 401, 402(심야), 406, 408, 606,
+                      607, 700, 704, 706, 707, 708
+                    </span>
+                  </div>
+                </div>
+
+                <div className="location__tabs__content__bus">
+                  <div className="location__tabs__content__bus__title green">
+                    <span>지선</span>
+                  </div>
+                  <div>
+                    <span>1020, 1711, 7016, 7018, 7022, 7212, 7025</span>
+                  </div>
+                </div>
+                <div className="location__tabs__content__bus">
+                  <div className="location__tabs__content__bus__title black">
+                    <span>마을버스</span>
+                  </div>
+                  <div>
+                    <span>
+                      종로 09, 종로 11 <br />* 세종문화회관, KT광화문지사,
+                      경복궁 정류장 하차 더 케이 트윈타워 LL층
+                    </span>
+                  </div>
+                </div>
+              </>
             }
           />
           <Guest
